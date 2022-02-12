@@ -1,5 +1,5 @@
-//import { getRecentRecipes } from '../api/recipe.js';
-import { getReservation } from '../api/recipe.js';
+import { getRecentReservation } from '../api/recipe.js';
+//import { getReservation } from '../api/recipe.js';
 import { html, until } from '../lib.js';
 import { spinner } from './common.js';
 
@@ -34,7 +34,7 @@ export function homePage(ctx) {
 }
 
 async function loadReservations() {
-    const { results: reservation } = await getReservation();
+    const { results: reservation } = await getRecentReservation();
 
     if (reservation.length == 0) {
         return html `<p>Няма открити резервации!</p>`;

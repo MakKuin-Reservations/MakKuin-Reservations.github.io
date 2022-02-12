@@ -4,7 +4,7 @@ import { createSubmitHandler } from '../util.js';
 import { spinner } from './common.js';
 
 
-const commentsTemplate = (commentsPromise, hasUser, active, onToggle, onSubmit) => html`
+const commentsTemplate = (commentsPromise, hasUser, active, onToggle, onSubmit) => html `
 <div class="section-title">Comments</div>
 
 ${hasUser ? commentForm(active, onToggle, onSubmit) : null}
@@ -17,7 +17,7 @@ ${hasUser ? commentForm(active, onToggle, onSubmit) : null}
 
 const commentForm = (active, onToggle, onSubmit) => {
     if (active) {
-        return html`
+        return html `
         <article class="new-comment">
             <h2>New comment</h2>
             <form @submit=${onSubmit} id="commentForm">
@@ -26,22 +26,22 @@ const commentForm = (active, onToggle, onSubmit) => {
             </form>
         </article>`;
     } else {
-        return html`
+        return html `
         <article class="new-comment">
             <button @click=${onToggle} class="button">Add comment</button>
         </article>`;
     }
 };
 
-const commentCard = (comment) => html`
+const commentCard = (comment) => html `
 <li class="comment">
     <header>${comment.owner.username}<span class="comment-date">${(new Date(comment.createdAt)).toLocaleString()}</span></header>
     <p>${comment.content}</p>
 </li>`;
 
-export function commentsView(ctx, recipeId) {
+export function commentsView(ctx, reservationId) {
     const parent = document.getElementById('comments-container');
-    const commentsPromise = getCommentsByRecipeId(recipeId);
+    const commentsPromise = getCommentsByRecipeId(reservationId);
 
     update();
 
@@ -59,7 +59,7 @@ export function commentsView(ctx, recipeId) {
             return;
         }
 
-        const result = await createComment(recipeId, { content });
+        const result = await createComment(reservationId, { content });
         result.owner = { username: ctx.user.username };
         result.content = content;
 
