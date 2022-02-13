@@ -29,7 +29,7 @@ const createTemplate = (onSubmit, errors, data) => html `
             ${field({ label: 'Кетъринг за Родителите',type: 'textarea', name: 'parentMenu', placeholder: 'Кетъринг за Родителите', value: data.parentMenu})}
             ${field({ label: 'Друго', type: 'textarea', name: 'note2',  placeholder: 'Допълнително описание', value: data.note2})}
         
-          <input id="submitBtn" type="submit" value="Създай Рецепта">
+          <input id="submitBtn" type="submit" value="Създай Резервация">
         </form>
     </article>
 </section>`;

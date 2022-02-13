@@ -40,7 +40,7 @@ export async function getReservationById(id) {
 export async function createReservation(reservation) {
     addOwner(reservation)
 
-    return api.post(endpoints.reservations, reservation)
+    return api.post(endpoints.creatReservtion, reservation)
 };
 
 export async function updateReservation(id, reservation) {
