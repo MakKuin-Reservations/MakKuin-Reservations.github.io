@@ -10,7 +10,11 @@ export const endpoints = {
     creatReservtion: '/classes/Reservations/',
     reservationById: '/classes/Reservations/',
     comments: '/classes/Comment',
-    commentsByRecipe: (reservationId) => `/classes/Comment?where=${createPointerQuery('reservation', 'Reservation', reservationId)}&include=owner`,
+    commentsByRecipe: (reservationId) => `/classes/Comment?where=${createPointerQuery('reservation', 'Reservation', reservationId)}&include=owner&order=-createdAt`,
+
+
+
+
 };
 
 export function createPointerQuery(propName, className, objectId) {

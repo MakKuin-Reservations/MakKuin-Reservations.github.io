@@ -5,7 +5,7 @@ import { spinner } from './common.js';
 
 
 const commentsTemplate = (commentsPromise, hasUser, active, onToggle, onSubmit) => html `
-<div class="section-title">Comments</div>
+<div class="section-title">Коментар</div>
 
 ${hasUser ? commentForm(active, onToggle, onSubmit) : null}
 
@@ -19,7 +19,7 @@ const commentForm = (active, onToggle, onSubmit) => {
     if (active) {
         return html `
         <article class="new-comment">
-            <h2>New comment</h2>
+            <h2>Направи Коментар</h2>
             <form @submit=${onSubmit} id="commentForm">
                 <textarea name="content" placeholder="Type comment"></textarea>
                 <input type="submit" value="Add comment">

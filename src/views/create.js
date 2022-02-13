@@ -16,20 +16,20 @@ const createTemplate = (onSubmit, errors, data) => html `
             ${field({ label: 'Час', name: 'time', placeholder: 'Час', value: data.time, error: errors.time })}
             ${field({ label: 'Телефон', name: 'phone', placeholder: 'Телефон', value: data.phone, error: errors.phone })}
             ${field({ label: 'kaparo', name: 'kaparo', placeholder: 'Капаро', value: data.kaparo, error: errors.kaparo })}
-            ${field({ label: 'Сладкарница - Доставчик', name: 'cacke', placeholder: 'Сладкарница', value: data.cacke, error: errors.cacke })}
-            ${field({ label: 'Код на тортата', name: 'cackeCode', placeholder: 'Номер на тортата', value: data.cackeCode, error: errors.cackeCode })}
-            ${field({ label: 'Брой Парчета', name: 'pices', placeholder: 'Брой Парчета', value: data.pices, error: errors.pices })}
-            ${field({ label: 'Пълнеж', name: 'cackeType', placeholder: 'Пълнеж', value: data.cackeType, error: errors.cackeType })}
-            ${field({ label: 'ЧРД Надпис', name: 'cackeInscr', placeholder: 'Надпис', value: data.cackeInscr, error: errors.cackeInscr })}
-            ${field({ label: 'Вид на тортата', name: 'cackeDescript', placeholder: 'Описание на тортата', value: data.cackeDescript, error: errors.cackeDescript })}
-            ${field({ label: 'Цена', name: 'prices', placeholder: 'Ценана тортата', value: data.prices, error: errors.prices })}
-            ${field({ label: 'Брой Деца', name: 'kidsNumber', placeholder: 'Брой Деца', value: data.kidsNumber, error: errors.kidsNumber })}
-            ${field({ label: 'Детско Меню', name: 'kidsMenu', placeholder: 'Детско Меню', value: data.Menu, error: errors.kidsMenu })}
-            ${field({ label: 'Кетъринг за децата', type: 'textarea', name: 'kidsCetaring', placeholder: 'Кетъринг за децата', value: data.kidsCetaring, error: errors.kidsCetaring })}
-            ${field({ label: 'Кетъринг за Родителите',type: 'textarea', name: 'parentMenu', placeholder: 'Кетъринг за Родителите', value: data.parentMenu, error: errors.parentMenu })}
-            ${field({ label: 'Друго', type: 'textarea', name: 'note2',  placeholder: 'Допълнително описание', value: data.note2, error: errors.note2 })}
+            ${field({ label: 'Сладкарница - Доставчик', name: 'cacke', placeholder: 'Сладкарница', value: data.cacke})}
+            ${field({ label: 'Код на тортата', name: 'cackeCode', placeholder: 'Номер на тортата', value: data.cackeCode})}
+            ${field({ label: 'Брой Парчета', name: 'pices', placeholder: 'Брой Парчета', value: data.pices})}
+            ${field({ label: 'Пълнеж', name: 'cackeType', placeholder: 'Пълнеж', value: data.cackeType})}
+            ${field({ label: 'ЧРД Надпис', name: 'cackeInscr', placeholder: 'Надпис', value: data.cackeInscr})}
+            ${field({ label: 'Вид на тортата', name: 'cackeDescript', placeholder: 'Описание на тортата', value: data.cackeDescript})}
+            ${field({ label: 'Цена', name: 'prices', placeholder: 'Ценана тортата', value: data.prices})}
+            ${field({ label: 'Брой Деца', name: 'kidsNumber', placeholder: 'Брой Деца', value: data.kidsNumber})}
+            ${field({ label: 'Детско Меню', name: 'kidsMenu', placeholder: 'Детско Меню', value: data.kidsMenu})}
+            ${field({ label: 'Кетъринг за децата', type: 'textarea', name: 'kidsCetaring', placeholder: 'Кетъринг за децата', value: data.kidsCetaring})}
+            ${field({ label: 'Кетъринг за Родителите',type: 'textarea', name: 'parentMenu', placeholder: 'Кетъринг за Родителите', value: data.parentMenu})}
+            ${field({ label: 'Друго', type: 'textarea', name: 'note2',  placeholder: 'Допълнително описание', value: data.note2})}
         
-          <input type="submit" value="Създай Рецепта">
+          <input id="submitBtn" type="submit" value="Създай Рецепта">
         </form>
     </article>
 </section>`;
@@ -47,10 +47,17 @@ export function createPage(ctx) {
         try {
             const missing = Object.entries(data).filter(([k, v]) => v == '');
 
-            if (missing.length > 0) {
+
+
+            if (data.Name == '' || data.Age == '' || data.time == '' || data.phone == '' || data.kaparo == '') {
+
+
                 throw missing.reduce((a, [k]) => Object.assign(a, {
                     [k]: true
-                }), { message: 'Моля попълнете всички полета!' });
+
+                }), { message: 'Моля попълнете задължителните полета!' });
+
+
             }
 
             const reservation = {

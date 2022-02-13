@@ -83,7 +83,7 @@ async function loadReservation(ctx) {
     return reservationCard(reservation, isOwner, onDelete);
 
     async function onDelete() {
-        const choice = confirm('Сигурни ли сте че искате да изтриете резервацията?');
+        const choice = confirm('Сигурни ли сте че изкате да изтриете резервацията?');
 
         if (choice) {
             await deleteReservation(ctx.params.id);

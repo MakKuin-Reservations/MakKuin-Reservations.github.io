@@ -26,9 +26,9 @@ export async function getReservation(page, query) {
         return api.get(endpoints.reservations(page));
     }
     //})();
-    // data.pages = Math.ceil(data.count / pageSize);
+    //data.pages = Math.ceil(data.count / pageSize);
 
-    // return data;
+    //return data;
 }
 
 
@@ -40,7 +40,7 @@ export async function getReservationById(id) {
 export async function createReservation(reservation) {
     addOwner(reservation)
 
-    return api.post(endpoints.creatReservtion, reservation)
+    return api.post(endpoints.reservations, reservation)
 };
 
 export async function updateReservation(id, reservation) {
