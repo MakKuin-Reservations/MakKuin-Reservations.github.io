@@ -12,6 +12,11 @@ export const field = ({ label, name, type = 'text', value = '', placeholder = ''
     }
 };
 
+
+export const field2 = ({ select, name, type = Option, value = '', error }) => {
+    return html `<label class="ml">${select}: <option class=${classMap({ error })} name=${name}  .value=${value}></label>`;
+};
+
 export const errorMsg = (errors) => {
     if (errors) {
         return html `<p class="error">${errors.message}</p>`;

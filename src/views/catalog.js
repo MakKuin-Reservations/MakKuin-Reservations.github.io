@@ -28,10 +28,10 @@ const catalogTemplate = (reservationPromise, onSearch, pager, search = '') => ht
 const reservationPreview = (reservation) => html `
 <a class="card" href="/details/${reservation.objectId}">
     <article class="preview">
+        <div class="small"><img src="/assets/reservations.jpg"></div>
         <div class="title">
             <h2>${reservation.Name} - ${reservation.Age }г.</h2>
         </div>
-        <div class="small"><img src="/assets/reservations.jpg"></div>
     </article>
 </a>`;
 
@@ -71,7 +71,7 @@ async function loadReservations(reservationPromise) {
     const { results: reservation } = await reservationPromise;
 
     if (reservation.length == 0) {
-        return html`<p>No reservation found!</p>`;
+        return html`<p>Няма намерени резервации!</p>`;
     } else {
         return reservation.map(reservationPreview);
     }

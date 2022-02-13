@@ -14,39 +14,60 @@ const detailsTemplate = (reservationPromise) => html `
 
 const reservationCard = (reservation, isOwner, onDelete) => html `
 <article>
-    <h2>${reservation.Name}</h2>
+    <h2>Резервация на ${reservation.Name} ${reservation.Age}г.</h2>
     <div class="band">
         <div class="thumb"><img src="/assets/reservations.jpg"></div>
         <div class="ingredients">
             <h3>Детайли:</h3>
             <ul>
-                <li>${reservation.notes}</li>
-               <li> ${reservation.Name}</li>
-               <li>${reservation.Age}</li>
-               <li>${reservation.kaparo}</li>
-               <li>${reservation.time}</li>
-               <li>${reservation.phone}</li>
-               <li>${reservation.cacke}</li>
-               <li>${reservation.pices}</li>
-               <li>${reservation.cackeCode}</li>
-               <li>${reservation.cackeDesc}</li>
-               <li>${reservation.cackeType}</li>
-               <li>${reservation.cackeInscr}</li>
-               <li>${reservation.kidsMenu}</li>
-               <li>${reservation.kidsKetaring}</li>
-               <li>${reservation.parentMenu}</li>
-               <li>${reservation.kidsNumber}</li>
+               <p> ___________________________________</p>
+               <h3>Резервация за: ${reservation.time} часа</h3>
+               <h3>От: ${reservation.time} часа</h3>
+
+               <p> ___________________________________</p>
+               </div>
+             
+
+
+    <div class="description">
+               <li>Име: ${reservation.Name}</li>
+               <li>Години: ${reservation.Age}</li>
+               <li>Телефон: ${reservation.phone}</li>
+               <li>Капаро: ${reservation.kaparo}лв.</li>
+    </div>
+    <div class="description">
+               <li>Сладкарница: ${reservation.cacke}</li>
+               <li>Код на тортата: ${reservation.cackeCode}</li>
+               <li>Пълнеж:${reservation.pices}</li>
+               <li>Вид на тортата:${reservation.cackeType}</li>
+               <li>Надпис: ${reservation.cackeInscr}</li>
+               <li>Вид на тортата${reservation.cackeDescript}</li>
+               <li>Цена: ${reservation.prices}лв.</li>
+    </div>
+    <div class="description">
+               <li>Брой деца:${reservation.kidsNumber}</li>
+               <li>Детско меню:${reservation.kidsMenu}</li>
+    </div>
             </ul>
         </div>
     </div>
     <div class="description">
-        <h3>Подготовка:</h3>
+        <h3>Кетъринг за Децата:</h3>
+        ${reservation.kidsCetaring.map(i => html`<p>${i}</p>`)}
+    </div>
+    <div class="description">
+        <h3>Кетъринг за Родителите:</h3>
+        ${reservation.parentMenu.map(i => html`<p>${i}</p>`)}
+    </div>
+    
+    <div class="description">
+        <h3>Друго:</h3>
         ${reservation.note2.map(i => html`<p>${i}</p>`)}
     </div>
     ${isOwner ? 
     html`<div class="controls">
-        <a class="actionLink" href="/edit/${reservation.objectId}">&#x270e; Edit</a>
-        <a @click=${onDelete} class="actionLink" href="javascript:void(0)">&#x2716; Delete</a>
+        <a class="actionLink" href="/edit/${reservation.objectId}">&#x270e; Редактирай</a>
+        <a @click=${onDelete} class="actionLink" href="javascript:void(0)">&#x2716; Изтрий</a>
     </div>` : null}
 </article>`;
 
@@ -62,7 +83,7 @@ async function loadReservation(ctx) {
     return reservationCard(reservation, isOwner, onDelete);
 
     async function onDelete() {
-        const choice = confirm('Are you sure you want to delete this recipe?');
+        const choice = confirm('Сигурни ли сте че искате да изтриете резервацията?');
 
         if (choice) {
             await deleteReservation(ctx.params.id);
