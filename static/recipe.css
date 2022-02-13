@@ -133,7 +133,39 @@ article h2 {
     margin: 0;
 }
 
+.recent2 {
+    float: left;
+    display: block;
+    width: 250px;
+    margin: 10px;
+}
+
+.recent3 {
+    float: left;
+    display: block;
+    width: 250px;
+    margin: 80px;
+}
+
 .recent:hover {
+    cursor: pointer;
+    box-shadow: 16px 16px 8px 0 rgba(0, 0, 0, 0.2), 20px 20px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: salmon;
+}
+
+.recent2:hover {
+    cursor: pointer;
+    box-shadow: 16px 16px 8px 0 rgba(0, 0, 0, 0.2), 20px 20px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: salmon;
+}
+
+.recent3:hover {
+    cursor: pointer;
+    box-shadow: 16px 16px 8px 0 rgba(0, 0, 0, 0.2), 20px 20px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: salmon;
+}
+
+.recent-preview:hover {
     cursor: pointer;
     box-shadow: 16px 16px 8px 0 rgba(0, 0, 0, 0.2), 20px 20px 20px 0 rgba(0, 0, 0, 0.19);
     background-color: salmon;
@@ -154,6 +186,41 @@ article h2 {
 
 .recent-title {
     padding: 8px 16px;
+}
+
+.recent-title1 {
+    padding: 8px 16px;
+    background-color: rgba(247, 231, 7, 0.37);
+    border-radius: 0 0 16px 16px;
+    text-align: center;
+}
+
+.recent-title2 {
+    padding: 8px 16px;
+    background-color: rgba(47, 240, 9, 0.473);
+    border-radius: 0 0 16px 16px;
+    text-align: center;
+}
+
+.recent-title3 {
+    padding: 8px 16px;
+    background-color: rgba(11, 202, 250, 0.473);
+    border-radius: 0 0 16px 16px;
+    text-align: center;
+}
+
+.recent-title4 {
+    padding: 8px 16px;
+    background-color: rgba(109, 9, 240, 0.473);
+    border-radius: 0 0 16px 16px;
+    text-align: center;
+}
+
+.recent-title5 {
+    padding: 8px 16px;
+    background-color: rgba(212, 29, 29, 0.473);
+    border-radius: 0 0 16px 16px;
+    text-align: center;
 }
 
 .card,

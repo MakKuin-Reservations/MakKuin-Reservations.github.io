@@ -111,6 +111,7 @@ a.active {
     box-shadow: 8px 8px 8px 0 rgba(0, 0, 0, 0.2), 12px 12px 20px 0 rgba(0, 0, 0, 0.19);
     padding: 16px 32px;
     border-radius: 2px;
+    text-align: center;
 }
 
 a {

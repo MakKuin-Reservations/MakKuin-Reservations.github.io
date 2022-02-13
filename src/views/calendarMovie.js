@@ -55,7 +55,7 @@ function createQuery(page, search) {
     return `?page=${page}${(search ? `&search=${search}` : '')}`;
 }
 
-export function catalogPage(ctx) {
+export function calendarMoviePage(ctx) {
     const { page, search } = parseQuery(ctx.querystring);
     const reservationPromise = getReservation(page || 1, search || '');
 

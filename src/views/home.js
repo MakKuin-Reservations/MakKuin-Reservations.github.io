@@ -5,16 +5,52 @@ import { spinner } from './common.js';
 
 
 const homeTemplate = (reservationPromise) => html `
+
 <section id="home">
-    <div class="hero">
-        <h2>Мойте Резервации</h2>
-    </div>
-    <header class="section-title">Последно добавени резервации</header>
+    
+    <header class="section-title">Изберете календар за дадена зала</header>
+  
     <div class="recent-recipes">
+    <a class="card" href="/calendarDC">
+    <article class="recent2">
+        <div class="recent-preview"><img src="/assets/Calendar.png"></div>
+        <div class="recent-title1">ДЕТСКИ ЦЕНТЪР</div>
+            </article>
+    </a>
+    <a class="card" href="/calendarPB">
+    <article class="recent2">
+        <div class="recent-preview"><img src="/assets/Calendar.png"></div>
+        <div class="recent-title2">ПЕЙНТБОЛ</div>
+            </article>
+    </a>
+    <a class="card" href="/calendarPS">
+    <article class="recent2">
+        <div class="recent-preview"><img src="/assets/Calendar.png"></div>
+        <div class="recent-title3">ПЪЗЕЛ СТАЯ</div>
+            </article>
+    </a>
+    <a class="card" href="/calendarDisco">
+    <article class="recent3">
+        <div class="recent-preview"><img src="/assets/Calendar.png"></div>
+        <div class="recent-title4">ДИСКОТЕКА</div>
+            </article>
+    </a>
+    <a class="card" href="/calendarMovie">
+    <article class="recent3">
+        <div class="recent-preview"><img src="/assets/Calendar.png"></div>
+        <div class="recent-title5">Р.Д. С ФИЛМ</div>
+            </article>
+    </a>
+    </div>
+   
 
-        ${until(reservationPromise, spinner())}
+   <header class="section-title">Последно добавени резервации</header>
+        <div class="recent-recipes">
+
+            ${until(reservationPromise, spinner())}
 
     </div>
+
     <footer class="section-title">
         <p>Потърси всички резервации <a href="/catalog">Резервации</a></p>
     </footer>
@@ -42,6 +78,7 @@ async function loadReservations() {
         return reservation.reduce((a, c) => {
             if (a.length > 0) {
                 a.push(html `<div class="recent-space"></div>`);
+
             }
             a.push(reservationPreview(c));
             return a;
