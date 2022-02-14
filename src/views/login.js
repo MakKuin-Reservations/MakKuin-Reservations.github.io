@@ -39,7 +39,7 @@ export function loginPage(ctx) {
             event.target.reset();
             ctx.updateSession();
             ctx.updateUserNav();
-            ctx.page.redirect('/catalog');
+            ctx.page.redirect('/home');
         } catch (err) {
             update(err, { username });
         }

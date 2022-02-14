@@ -157,3 +157,22 @@ a:visited {
 #searchForm input[type="submit"] {
     display: inline-block;
 }
+
+.test a {
+    display: inline-block;
+    background-color: rgb(27, 219, 43);
+    padding: 8px 16px;
+    margin: 0 8px;
+    text-decoration: none;
+    color: black;
+    border-radius: 8px;
+}
+
+.test a:visited {
+    color: black;
+}
+
+.test a:hover {
+    background-color: #6c8b47;
+    color: white;
+}

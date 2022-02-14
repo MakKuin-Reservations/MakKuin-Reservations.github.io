@@ -5,6 +5,11 @@ import { spinner } from './common.js';
 
 
 const catalogTemplate = (reservationPromise, onSearch, pager, search = '') => html `
+
+<div class="test">
+<a  href="/createDC">Направи Резервация</a>
+</div>
+
 <section id="catalog">
 
     <div class="section-title">
@@ -13,8 +18,10 @@ const catalogTemplate = (reservationPromise, onSearch, pager, search = '') => ht
             <input type="submit" value="Search">
         </form>
     </div>
-     
-    <a id="createLink" href="/createDC">Направи Резервация</a>
+
+      
+            
+    
 
     <header class="section-title">
         ${until(pager(), spinner())}
@@ -27,6 +34,7 @@ const catalogTemplate = (reservationPromise, onSearch, pager, search = '') => ht
     </footer>
 
 </section>`;
+
 
 
 
@@ -65,9 +73,9 @@ export function calendarDCPage(ctx) {
 
     function onSearch({ search }) {
         if (search) {
-            ctx.page.redirect(`/catalog?search=${encodeURIComponent(search)}`);
+            ctx.page.redirect(`/catalogDC?search=${encodeURIComponent(search)}`);
         } else {
-            ctx.page.redirect('/catalog');
+            ctx.page.redirect('/catalogDC');
         }
     }
 }
