@@ -9,7 +9,7 @@ const catalogTemplate = (reservationPromise, onSearch, pager, search = '') => ht
 
     <div class="section-title">
         <form @submit=${onSearch} id="searchForm">
-            <input type="text" Name="search" .value=${search}>
+            <input type="text" name="search" .value=${search}>
             <input type="submit" value="Search">
         </form>
     </div>

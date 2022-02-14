@@ -12,6 +12,7 @@ import { calendarPSPage } from './views/calendarPS.js';
 import { calendarDiscoPage } from './views/calendarDisco.js';
 import { calendarMoviePage } from './views/calendarMovie.js';
 import { createPage } from './views/create.js';
+import { createDCPage } from './views/createDC.js';
 import { detailsPage } from './views/details.js';
 import { editPage } from './views/edit.js';
 
@@ -29,6 +30,7 @@ page('/details/:id', detailsPage);
 page('/login', loginPage);
 page('/register', registerPage);
 page('/create', createPage);
+page('/createDC', createDCPage);
 page('/edit/:id', editPage);
 
 page.start();

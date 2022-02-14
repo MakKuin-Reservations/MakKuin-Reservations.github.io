@@ -1,4 +1,4 @@
-import { getReservation } from '../api/recipe.js';
+import { getReservationDC } from '../api/recipe.js';
 import { html, until } from '../lib.js';
 import { createSubmitHandler, parseQuery } from '../util.js';
 import { spinner } from './common.js';
@@ -13,6 +13,8 @@ const catalogTemplate = (reservationPromise, onSearch, pager, search = '') => ht
             <input type="submit" value="Search">
         </form>
     </div>
+     
+    <a id="createLink" href="/createDC">Направи Резервация</a>
 
     <header class="section-title">
         ${until(pager(), spinner())}
@@ -28,12 +30,12 @@ const catalogTemplate = (reservationPromise, onSearch, pager, search = '') => ht
 
 
 
-const reservationPreview = (reservation) => html `
-<a class="card" href="/details/${reservation.objectId}">
+const reservationPreview = (reservationDC) => html `
+<a class="card" href="/details/${reservationDC.objectId}">
     <article class="preview">
         <div class="small"><img src="/assets/reservations.jpg"></div>
         <div class="title">
-            <h2>${reservation.Name} - ${reservation.Age }г.</h2>
+            <h2>${reservationDC.Name} - ${reservationDC.Age }г.</h2>
         </div>
     </article>
 </a>`;
@@ -57,7 +59,7 @@ function createQuery(page, search) {
 
 export function calendarDCPage(ctx) {
     const { page, search } = parseQuery(ctx.querystring);
-    const reservationPromise = getReservation(page || 1, search || '');
+    const reservationPromise = getReservationDC(page || 1, search || '');
 
     ctx.render(catalogTemplate(loadReservations(reservationPromise), createSubmitHandler(onSearch, 'search'), pagerSetup(page || 1, reservationPromise, search), search));
 
@@ -71,11 +73,11 @@ export function calendarDCPage(ctx) {
 }
 
 async function loadReservations(reservationPromise) {
-    const { results: reservation } = await reservationPromise;
+    const { results: reservationDC } = await reservationPromise;
 
-    if (reservation.length == 0) {
+    if (reservationDC.length == 0) {
         return html`<p>Няма намерени резервации!</p>`;
     } else {
-        return reservation.map(reservationPreview);
+        return reservationDC.map(reservationPreview);
     }
 }
