@@ -79,6 +79,7 @@ async function loadReservations() {
             if (a.length > 0) {
                 a.push(html `<div class="recent-space"></div>`);
 
+
             }
             a.push(reservationPreview(c));
             return a;

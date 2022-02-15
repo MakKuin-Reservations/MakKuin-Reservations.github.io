@@ -39,7 +39,7 @@ const catalogTemplate = (reservationPromise, onSearch, pager, search = '') => ht
 
 
 const reservationPreview = (reservationDC) => html `
-<a class="card" href="/details/${reservationDC.objectId}">
+<a class="card" href="/detailsDC/${reservationDC.objectId}">
     <article class="preview">
         <div class="small"><img src="/assets/reservations.jpg"></div>
         <div class="title">

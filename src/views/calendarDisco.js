@@ -1,4 +1,4 @@
-import { getReservation } from '../api/recipe.js';
+import { getReservationDisco } from '../api/recipe.js';
 import { html, until } from '../lib.js';
 import { createSubmitHandler, parseQuery } from '../util.js';
 import { spinner } from './common.js';
@@ -6,6 +6,10 @@ import { spinner } from './common.js';
 
 const catalogTemplate = (reservationPromise, onSearch, pager, search = '') => html `
 <section id="catalog">
+
+<div class="test">
+<a  href="/createDisco">Направи Резервация</a>
+</div>
 
     <div class="section-title">
         <form @submit=${onSearch} id="searchForm">
@@ -28,12 +32,12 @@ const catalogTemplate = (reservationPromise, onSearch, pager, search = '') => ht
 
 
 
-const reservationPreview = (reservation) => html `
-<a class="card" href="/details/${reservation.objectId}">
+const reservationPreview = (reservationDisco) => html `
+<a class="card" href="/detailsDisco/${reservationDisco.objectId}">
     <article class="preview">
         <div class="small"><img src="/assets/reservations.jpg"></div>
         <div class="title">
-            <h2>${reservation.Name} - ${reservation.Age }г.</h2>
+            <h2>${reservationDisco.Name} - ${reservationDisco.Age }г.</h2>
         </div>
     </article>
 </a>`;
@@ -57,25 +61,25 @@ function createQuery(page, search) {
 
 export function calendarDiscoPage(ctx) {
     const { page, search } = parseQuery(ctx.querystring);
-    const reservationPromise = getReservation(page || 1, search || '');
+    const reservationPromise = getReservationDisco(page || 1, search || '');
 
     ctx.render(catalogTemplate(loadReservations(reservationPromise), createSubmitHandler(onSearch, 'search'), pagerSetup(page || 1, reservationPromise, search), search));
 
     function onSearch({ search }) {
         if (search) {
-            ctx.page.redirect(`/catalog?search=${encodeURIComponent(search)}`);
+            ctx.page.redirect(`/catalogDisco?search=${encodeURIComponent(search)}`);
         } else {
-            ctx.page.redirect('/catalog');
+            ctx.page.redirect('/catalogDisco');
         }
     }
 }
 
 async function loadReservations(reservationPromise) {
-    const { results: reservation } = await reservationPromise;
+    const { results: reservationDisco } = await reservationPromise;
 
-    if (reservation.length == 0) {
+    if (reservationDisco.length == 0) {
         return html`<p>Няма намерени резервации!</p>`;
     } else {
-        return reservation.map(reservationPreview);
+        return reservationDisco.map(reservationPreview);
     }
 }

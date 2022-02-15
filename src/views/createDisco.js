@@ -1,4 +1,4 @@
-import { createReservationDC } from '../api/recipe.js';
+import { createReservationDisco } from '../api/recipe.js';
 import { html } from '../lib.js';
 import { createSubmitHandler } from '../util.js';
 import { errorMsg, field } from './common.js';
@@ -34,7 +34,7 @@ const createTemplate = (onSubmit, errors, data) => html `
     </article>
 </section>`;
 
-export function createDCPage(ctx) {
+export function createDiscoPage(ctx) {
     update();
 
     function update(errors = {}, data = {}) {
@@ -60,12 +60,12 @@ export function createDCPage(ctx) {
 
             }
 
-            const reservationDC = {
+            const reservationDisco = {
                 Name: data.Name,
                 Age: Number(data.Age),
                 time: data.time,
                 phone: Number(data.phone),
-                kaparo: Number(data.kaparo),
+                kaparo: data.kaparo,
                 cacke: data.cacke,
                 cackeCode: data.cackeCode,
                 pices: Number(data.pices),
@@ -80,9 +80,9 @@ export function createDCPage(ctx) {
                 note2: data.note2.split('\n').filter(r => r != ''),
             };
 
-            const result = await createReservationDC(reservationDC);
+            const result = await createReservationDisco(reservationDisco);
             event.target.reset();
-            ctx.page.redirect('/detailsDC/' + result.objectId);
+            ctx.page.redirect('/detailsDisco/' + result.objectId);
         } catch (err) {
             update(err, data);
         }

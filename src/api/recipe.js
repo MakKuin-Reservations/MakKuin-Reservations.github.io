@@ -11,6 +11,9 @@ export async function getRecentReservation() {
 export async function getReservationDC() {
     return api.get(endpoints.reservationDC);
 }
+export async function getReservationDisco() {
+    return api.get(endpoints.reservationDisco);
+}
 
 export async function getReservation(page, query) {
     const data = await (() => {
@@ -41,6 +44,15 @@ export async function getReservationById(id) {
     return api.get(endpoints.reservationDetails(id));
 }
 
+export async function getReservationDCById(id) {
+    return api.get(endpoints.reservationDCDetails(id));
+}
+
+export async function getReservationDiscoById(id) {
+    return api.get(endpoints.reservationDiscoDetails(id));
+}
+
+
 export async function createReservation(reservation) {
     addOwner(reservation)
     return api.post(endpoints.creatReservtion, reservation)
@@ -50,6 +62,12 @@ export async function createReservationDC(reservationDC) {
     addOwner(reservationDC)
 
     return api.post(endpoints.creatReservtionDC, reservationDC)
+};
+
+export async function createReservationDisco(reservationDisco) {
+    addOwner(reservationDisco)
+
+    return api.post(endpoints.creatReservtionDisco, reservationDisco)
 };
 
 export async function updateReservation(id, reservation) {

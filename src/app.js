@@ -13,13 +13,17 @@ import { calendarDiscoPage } from './views/calendarDisco.js';
 import { calendarMoviePage } from './views/calendarMovie.js';
 import { createPage } from './views/create.js';
 import { createDCPage } from './views/createDC.js';
+import { createDiscoPage } from './views/createDisco.js';
+
 import { detailsPage } from './views/details.js';
+import { detailsDCPage } from './views/detailsDC.js';
+import { detailsDiscoPage } from './views/detailsDisco.js';
 import { editPage } from './views/edit.js';
 
 page(decorateContext());
 page(addSession());
 page(notify());
-page('/', homePage);
+page('/home', homePage);
 page('/catalog', catalogPage);
 page('/calendarDC', calendarDCPage);
 page('/calendarPB', calendarPBPage);
@@ -27,10 +31,16 @@ page('/calendarPS', calendarPSPage);
 page('/calendarDisco', calendarDiscoPage);
 page('/calendarMovie', calendarMoviePage);
 page('/details/:id', detailsPage);
-page('/login', loginPage);
+page('/detailsDC/:id', detailsDCPage);
+page('/detailsDisco/:id', detailsDiscoPage);
+
+
+page('/', loginPage);
 page('/register', registerPage);
 page('/create', createPage);
 page('/createDC', createDCPage);
+page('/createDisco', createDiscoPage);
+
 page('/edit/:id', editPage);
 
 page.start();
