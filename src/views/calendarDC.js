@@ -1,4 +1,4 @@
-import { getReservation } from '../api/recipe.js';
+import { getReservationDC } from '../api/recipe.js';
 import { html, until } from '../lib.js';
 import { createSubmitHandler, parseQuery } from '../util.js';
 import { spinner } from './common.js';
@@ -62,7 +62,7 @@ function createQuery(page, search) {
 
 export function calendarDCPage(ctx) {
     const { page, search } = parseQuery(ctx.querystring);
-    const reservationPromise = getReservation(page || 1, search || '');
+    const reservationPromise = getReservationDC(page || 1, search || '');
 
     ctx.render(catalogTemplate(loadReservations(reservationPromise), createSubmitHandler(onSearch, 'search'), pagerSetup(page || 1, reservationPromise, search), search));
 
