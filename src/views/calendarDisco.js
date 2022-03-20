@@ -48,9 +48,9 @@ function pagerSetup(page, reservationPromise, search) {
 
             return html `
             Page ${page} of ${pages}
-            ${page > 1 ? html`<a class="pager" href=${'/catalog/' + createQuery(page - 1, search)}>&lt;
+            ${page > 1 ? html`<a class="pager" href=${'/calendarDisco/' + createQuery(page - 1, search)}>&lt;
                 Prev</a>` : ''}
-            ${page < pages ? html`<a class="pager" href=${'/catalog/' + createQuery(page + 1, search)}>Next
+            ${page < pages ? html`<a class="pager" href=${'/calendarDisco/' + createQuery(page + 1, search)}>Next
                 &gt;</a>` : ''}`;
     };
 }
@@ -67,9 +67,9 @@ export function calendarDiscoPage(ctx) {
 
     function onSearch({ search }) {
         if (search) {
-            ctx.page.redirect(`/catalogDisco?search=${encodeURIComponent(search)}`);
+            ctx.page.redirect(`/calendarDisco?search=${encodeURIComponent(search)}`);
         } else {
-            ctx.page.redirect('/catalogDisco');
+            ctx.page.redirect('/calendarDisco');
         }
     }
 }

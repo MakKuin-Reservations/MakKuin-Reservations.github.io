@@ -1,27 +1,43 @@
 import { getUserData } from '../util.js';
 
-const pageSize = 10;
+const pageSize = 2;
 
 export const endpoints = {
-    recent: '/classes/Reservations?limit=3&order=-createdAt',
-    reservations: (page) => `/classes/Reservations?skip=${(page - 1) * pageSize}&limit=${pageSize}&count=1`,
+    recent: '/classes/ReservationPB?limit=3&order=-createdAt',
+    recent: '/classes/ReservationPS?limit=3&order=-createdAt',
+    recent: '/classes/ReservationDisco?limit=3&order=-createdAt',
+    recent: '/classes/ReservationDC?limit=3&order=-createdAt',
+    recent: '/classes/ReservationMovie?limit=3&order=-createdAt',
+
+
     reservationDC: `/classes/ReservationDC`,
     reservationDisco: `/classes/ReservationDisco`,
+    reservationPB: `/classes/ReservationPB`,
+    reservationPS: `/classes/ReservationPS`,
+    reservationMovie: `/classes/ReservationMovie`,
 
-    reservationSearch: (page, query) => `/classes/Reservation?where=${createQuery(query)}&skip=${(page - 1) * pageSize}&limit=${pageSize}&count=1`,
-    reservationDetails: (id) => `/classes/Reservations/${id}?include=owner`,
+    //reservationMovie: (page) => `/classes/ReservationMovie?skip=${(page - 1) * pageSize}&limit=${pageSize}&count=1`,
+    //reservationSearch: (page, query) => `/classes/ReservationMovie?where=${createQuery(query)}&skip=${(page - 1) * pageSize}&limit=${pageSize}&count=1`,
+
+
+    reservationPBDetails: (id) => `/classes/ReservationPB/${id}?include=owner`,
+    reservationPSDetails: (id) => `/classes/ReservationPS/${id}?include=owner`,
     reservationDCDetails: (id) => `/classes/ReservationDC/${id}?include=owner`,
+    reservationMovieDetails: (id) => `/classes/ReservationMovie/${id}?include=owner`,
     reservationDiscoDetails: (id) => `/classes/ReservationDisco/${id}?include=owner`,
 
-
-    creatReservtion: '/classes/Reservations/',
     creatReservtionDC: '/classes/ReservationDC/',
     creatReservtionDisco: '/classes/ReservationDisco/',
+    creatReservtionPB: '/classes/ReservationPB/',
+    creatReservtionPS: '/classes/ReservationPS/',
+    creatReservtionMovie: '/classes/ReservationMovie/',
 
+    reservationPBById: '/classes/ReservationPB/',
+    reservationPSById: '/classes/ReservationPS/',
+    reservationDCById: '/classes/ReservationDC/',
+    reservationDiscoById: '/classes/ReservationDisco/',
+    reservationMovieById: '/classes/ReservationMovie/',
 
-    reservationById: '/classes/Reservations/',
-    reservationDCById: '/classes/ReservationsDC/',
-    reservationDiscoById: '/classes/ReservationsDisco/',
 
 
     comments: '/classes/Comment',

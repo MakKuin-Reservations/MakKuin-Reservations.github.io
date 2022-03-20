@@ -1,10 +1,15 @@
-import { getReservation } from '../api/recipe.js';
+import { getReservationPS } from '../api/recipe.js';
 import { html, until } from '../lib.js';
 import { createSubmitHandler, parseQuery } from '../util.js';
 import { spinner } from './common.js';
 
 
 const catalogTemplate = (reservationPromise, onSearch, pager, search = '') => html `
+
+<div class="test">
+<a  href="/createPS">Направи Резервация</a>
+</div>
+
 <section id="catalog">
 
     <div class="section-title">
@@ -28,12 +33,12 @@ const catalogTemplate = (reservationPromise, onSearch, pager, search = '') => ht
 
 
 
-const reservationPreview = (reservation) => html `
-<a class="card" href="/details/${reservation.objectId}">
+const reservationPreview = (reservationPS) => html `
+<a class="card" href="/detailsPS/${reservationPS.objectId}">
     <article class="preview">
         <div class="small"><img src="/assets/reservations.jpg"></div>
         <div class="title">
-            <h2>${reservation.Name} - ${reservation.Age }г.</h2>
+            <h2>${reservationPS.Name} - ${reservationPS.Age }г.</h2>
         </div>
     </article>
 </a>`;
@@ -44,9 +49,9 @@ function pagerSetup(page, reservationPromise, search) {
 
             return html `
             Page ${page} of ${pages}
-            ${page > 1 ? html`<a class="pager" href=${'/catalog/' + createQuery(page - 1, search)}>&lt;
+            ${page > 1 ? html`<a class="pager" href=${'/calendarPS/' + createQuery(page - 1, search)}>&lt;
                 Prev</a>` : ''}
-            ${page < pages ? html`<a class="pager" href=${'/catalog/' + createQuery(page + 1, search)}>Next
+            ${page < pages ? html`<a class="pager" href=${'/calendarPS/' + createQuery(page + 1, search)}>Next
                 &gt;</a>` : ''}`;
     };
 }
@@ -57,15 +62,15 @@ function createQuery(page, search) {
 
 export function calendarPSPage(ctx) {
     const { page, search } = parseQuery(ctx.querystring);
-    const reservationPromise = getReservation(page || 1, search || '');
+    const reservationPromise = getReservationPS(page || 1, search || '');
 
     ctx.render(catalogTemplate(loadReservations(reservationPromise), createSubmitHandler(onSearch, 'search'), pagerSetup(page || 1, reservationPromise, search), search));
 
     function onSearch({ search }) {
         if (search) {
-            ctx.page.redirect(`/catalog?search=${encodeURIComponent(search)}`);
+            ctx.page.redirect(`/calendarPS?search=${encodeURIComponent(search)}`);
         } else {
-            ctx.page.redirect('/catalog');
+            ctx.page.redirect('/calendarPS');
         }
     }
 }

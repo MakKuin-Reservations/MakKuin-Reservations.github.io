@@ -1,4 +1,4 @@
-import { createReservation } from '../api/recipe.js';
+import { createReservationMovie } from '../api/recipe.js';
 import { html } from '../lib.js';
 import { createSubmitHandler } from '../util.js';
 import { errorMsg, field } from './common.js';
@@ -34,7 +34,7 @@ const createTemplate = (onSubmit, errors, data) => html `
     </article>
 </section>`;
 
-export function createPage(ctx) {
+export function createPageMovie(ctx) {
     update();
 
     function update(errors = {}, data = {}) {
@@ -60,7 +60,7 @@ export function createPage(ctx) {
 
             }
 
-            const reservation = {
+            const reservationMovie = {
                 Name: data.Name,
                 Age: Number(data.Age),
                 time: data.time,
@@ -68,21 +68,21 @@ export function createPage(ctx) {
                 kaparo: data.kaparo,
                 cacke: data.cacke,
                 cackeCode: data.cackeCode,
-                pices: data.pices,
+                pices: Number(data.pices),
                 cackeType: data.cackeType,
                 cackeInscr: data.cackeInscr,
                 cackeDescript: data.cackeDescript,
-                prices: data.prices,
-                kidsNumber: data.kidsNumber,
+                prices: Number(data.prices),
+                kidsNumber: Number(data.kidsNumber),
                 kidsMenu: data.kidsMenu,
                 kidsCetaring: data.kidsCetaring.split('\n').filter(r => r != ''),
                 parentMenu: data.parentMenu.split('\n').filter(r => r != ''),
                 note2: data.note2.split('\n').filter(r => r != ''),
             };
 
-            const result = await createReservation(reservation);
+            const result = await createReservationMovie(reservationMovie);
             event.target.reset();
-            ctx.page.redirect('/details/' + result.objectId);
+            ctx.page.redirect('/detailsMovie/' + result.objectId);
         } catch (err) {
             update(err, data);
         }

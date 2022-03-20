@@ -1,4 +1,4 @@
-import { deleteReservation, getReservationDCById } from '../api/recipe.js';
+import { deleteReservationDC, getReservationDCById } from '../api/recipe.js';
 import { html, until } from '../lib.js';
 import { commentsView } from './comments.js';
 import { spinner } from './common.js';
@@ -66,7 +66,7 @@ const reservationCard = (reservationDC, isOwner, onDelete) => html `
     </div>
     ${isOwner ? 
     html`<div class="controls">
-        <a class="actionLink" href="/edit/${reservationDC.objectId}">&#x270e; Редактирай</a>
+        <a class="actionLink" href="/editDC/${reservationDC.objectId}">&#x270e; Редактирай</a>
         <a @click=${onDelete} class="actionLink" href="javascript:void(0)">&#x2716; Изтрий</a>
     </div>` : null}
 </article>`;
@@ -86,9 +86,9 @@ async function loadReservation(ctx) {
         const choice = confirm('Сигурни ли сте че изкате да изтриете резервацията?');
 
         if (choice) {
-            await deleteReservation(ctx.params.id);
+            await deleteReservationDC(ctx.params.id);
             ctx.notify('Reservation deleted');
-            ctx.page.redirect('/catalog');
+            ctx.page.redirect('/calendarDC');
         }
     }
 }

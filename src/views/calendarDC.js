@@ -1,4 +1,4 @@
-import { getReservationDC } from '../api/recipe.js';
+import { getReservation } from '../api/recipe.js';
 import { html, until } from '../lib.js';
 import { createSubmitHandler, parseQuery } from '../util.js';
 import { spinner } from './common.js';
@@ -18,11 +18,7 @@ const catalogTemplate = (reservationPromise, onSearch, pager, search = '') => ht
             <input type="submit" value="Search">
         </form>
     </div>
-
-      
-            
-    
-
+     
     <header class="section-title">
         ${until(pager(), spinner())}
     </header>
@@ -37,13 +33,12 @@ const catalogTemplate = (reservationPromise, onSearch, pager, search = '') => ht
 
 
 
-
-const reservationPreview = (reservationDC) => html `
-<a class="card" href="/detailsDC/${reservationDC.objectId}">
+const reservationPreview = (reservation) => html `
+<a class="card" href="/detailsDC/${reservation.objectId}">
     <article class="preview">
         <div class="small"><img src="/assets/reservations.jpg"></div>
         <div class="title">
-            <h2>${reservationDC.Name} - ${reservationDC.Age }г.</h2>
+            <h2>${reservation.Name} - ${reservation.Age }г.</h2>
         </div>
     </article>
 </a>`;
@@ -54,9 +49,9 @@ function pagerSetup(page, reservationPromise, search) {
 
             return html `
             Page ${page} of ${pages}
-            ${page > 1 ? html`<a class="pager" href=${'/catalog/' + createQuery(page - 1, search)}>&lt;
+            ${page > 1 ? html`<a class="pager" href=${'/calendarDC/' + createQuery(page - 1, search)}>&lt;
                 Prev</a>` : ''}
-            ${page < pages ? html`<a class="pager" href=${'/catalog/' + createQuery(page + 1, search)}>Next
+            ${page < pages ? html`<a class="pager" href=${'/calendarDC/' + createQuery(page + 1, search)}>Next
                 &gt;</a>` : ''}`;
     };
 }
@@ -67,25 +62,25 @@ function createQuery(page, search) {
 
 export function calendarDCPage(ctx) {
     const { page, search } = parseQuery(ctx.querystring);
-    const reservationPromise = getReservationDC(page || 1, search || '');
+    const reservationPromise = getReservation(page || 1, search || '');
 
     ctx.render(catalogTemplate(loadReservations(reservationPromise), createSubmitHandler(onSearch, 'search'), pagerSetup(page || 1, reservationPromise, search), search));
 
     function onSearch({ search }) {
         if (search) {
-            ctx.page.redirect(`/catalogDC?search=${encodeURIComponent(search)}`);
+            ctx.page.redirect(`/calendarDC?search=${encodeURIComponent(search)}`);
         } else {
-            ctx.page.redirect('/catalogDC');
+            ctx.page.redirect('/calendarDC');
         }
     }
 }
 
 async function loadReservations(reservationPromise) {
-    const { results: reservationDC } = await reservationPromise;
+    const { results: reservation } = await reservationPromise;
 
-    if (reservationDC.length == 0) {
+    if (reservation.length == 0) {
         return html`<p>Няма намерени резервации!</p>`;
     } else {
-        return reservationDC.map(reservationPreview);
+        return reservation.map(reservationPreview);
     }
 }

@@ -58,7 +58,7 @@ const homeTemplate = (reservationPromise) => html `
 
 
 const reservationPreview = (reservation) => html `
-<a class="card" href="/details/${reservation.objectId}">
+<a class="card" >
     <article class="recent">
         <div class="recent-preview"><img src="/assets/reservations.jpg"></div>
         <div class="recent-title">${reservation.Name} - ${reservation.Age }г.</div>
@@ -68,6 +68,9 @@ const reservationPreview = (reservation) => html `
 export function homePage(ctx) {
     ctx.render(homeTemplate(loadReservations()));
 }
+
+
+
 
 async function loadReservations() {
     const { results: reservation } = await getRecentReservation();
