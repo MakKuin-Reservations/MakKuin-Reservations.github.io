@@ -1,4 +1,4 @@
-import { createReservation } from '../api/recipe.js';
+import { createReservationDC } from '../api/recipe.js';
 import { html } from '../lib.js';
 import { createSubmitHandler } from '../util.js';
 import { errorMsg, field } from './common.js';
