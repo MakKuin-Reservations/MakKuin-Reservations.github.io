@@ -33,12 +33,12 @@ const catalogTemplate = (reservationPromise, onSearch, pager, search = '') => ht
 
 
 
-const reservationPreview = (reservation) => html `
-<a class="card" href="/detailsDC/${reservation.objectId}">
+const reservationPreview = (reservationDC) => html `
+<a class="card" href="/detailsDC/${reservationDC.objectId}">
     <article class="preview">
         <div class="small"><img src="/assets/reservations.jpg"></div>
         <div class="title">
-            <h2>${reservation.Name} - ${reservation.Age }г.</h2>
+            <h2>${reservationDC.Name} - ${reservationDC.Age }г.</h2>
         </div>
     </article>
 </a>`;
@@ -76,11 +76,11 @@ export function calendarDCPage(ctx) {
 }
 
 async function loadReservations(reservationPromise) {
-    const { results: reservation } = await reservationPromise;
+    const { results: reservationDC } = await reservationPromise;
 
-    if (reservation.length == 0) {
+    if (reservationDC.length == 0) {
         return html`<p>Няма намерени резервации!</p>`;
     } else {
-        return reservation.map(reservationPreview);
+        return reservationDC.map(reservationPreview);
     }
 }
