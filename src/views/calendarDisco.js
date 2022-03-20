@@ -67,7 +67,7 @@ export function calendarDiscoPage(ctx) {
 
     function onSearch({ search }) {
         if (search) {
-            ctx.page.redirect(`/calendarDisco?search=${encodeURIComponent(search)}`);
+            ctx.page.redirect(`/calendarDisco?search=${encodeURIComponent(search)}`); 
         } else {
             ctx.page.redirect('/calendarDisco');
         }
