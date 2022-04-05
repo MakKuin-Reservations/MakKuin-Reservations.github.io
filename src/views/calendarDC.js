@@ -8,23 +8,14 @@ const catalogTemplate = (reservationPromise, onSearch, pager, search = '') => ht
 
 <div class="test">
 <a  href="/createDC">Направи Резервация</a>
+<a  href="https://form.jotform.com/220946904421353">Направи Резервация</a>
+
+
 </div>
 
 <section id="catalog">
 
-    <div class="section-title">
-        <form @submit=${onSearch} id="searchForm">
-            <input type="text" Name="search" .value=${search}>
-            <input type="submit" value="Search">
-        </form>
-    </div>
-     
-    <header class="section-title">
-        ${until(pager(), spinner())}
-    </header>
-
-    ${until(reservationPromise, spinner())}
-
+<iframe src="https://calendar.google.com/calendar/embed?height=400&wkst=2&bgcolor=%23E4C441&ctz=Europe%2FSofia&showTitle=0&showPrint=0&showTabs=1&showCalendars=1&showTz=1&src=bW83Y3U5OHU3cnE4bjZmbmhwb3N0YjYyNWtAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%23039BE5" style="border-width:0" width="900" height="400" frameborder="0" scrolling="no"></iframe>
     <footer class="section-title">
         ${until(pager(), spinner())}
     </footer>
