@@ -15,8 +15,8 @@ const catalogTemplate = (reservationPromise, onSearch, pager, search = '') => ht
 
 <section id="catalog">
 
-<iframe src="https://calendar.google.com/calendar/embed?src=gd3bgjubh8t8tp5hmdksfea2p4%40group.calendar.google.com&ctz=Europe%2FSofia" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
-    <footer class="section-title">
+<iframe src="https://calendar.google.com/calendar/embed?height=400&wkst=2&bgcolor=%23E4C441&ctz=Europe%2FSofia&showTitle=1&showPrint=0&src=Z2QzYmdqdWJoOHQ4dHA1aG1ka3NmZWEycDRAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%23F6BF26" style="border:solid 1px #777" width="900" height="400" frameborder="0" scrolling="no"></iframe>
+<footer class="section-title">
         ${until(pager(), spinner())}
     </footer>
 
