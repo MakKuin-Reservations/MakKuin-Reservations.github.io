@@ -22,7 +22,7 @@ const reservationCard = (reservationDisco, isOwner, onDelete) => html `
             <ul>
                <p> ___________________________________</p>
                <h3>Резервация за: ${reservationDisco.time} часа</h3>
-               <h3>От: ${reservationDisco.time} часа</h3>
+               <h3>От: ${reservationDisco.date} часа</h3>
 
                <p> ___________________________________</p>
                </div>
