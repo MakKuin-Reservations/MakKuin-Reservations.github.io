@@ -62,7 +62,7 @@ export function createDiscoPage(ctx) {
             }
 
             const reservationDisco = {
-                date: data.date,
+                date: new Date(data.date),
                 Name: data.Name,
                 Age: Number(data.Age),
                 time: data.time,
