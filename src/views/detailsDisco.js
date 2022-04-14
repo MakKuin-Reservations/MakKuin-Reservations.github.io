@@ -30,6 +30,7 @@ const reservationCard = (reservationDisco, isOwner, onDelete) => html `
 
 
     <div class="description">
+               <li>Дата: ${reservationDisco.date}</li>
                <li>Име: ${reservationDisco.Name}</li>
                <li>Години: ${reservationDisco.Age}</li>
                <li>Телефон: ${reservationDisco.phone}</li>

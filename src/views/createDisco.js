@@ -11,6 +11,7 @@ const createTemplate = (onSubmit, errors, data) => html `
         <form @submit=${onSubmit} id="createForm">
             ${errorMsg(errors)}
            
+            ${field({ label: 'Дата', name: 'date',type: 'datetime-local' ,value:"2022-01-01T00:00"})}
             ${field({ label: 'Име', name: 'Name', placeholder: 'Име на Детето', value: data.Name, error: errors.Name })}
             ${field({ label: 'Години', name: 'Age', placeholder: 'Години', value: data.Age, error: errors.Age })}
             ${field({ label: 'Час', name: 'time', placeholder: 'Час', value: data.time, error: errors.time })}
@@ -61,6 +62,7 @@ export function createDiscoPage(ctx) {
             }
 
             const reservationDisco = {
+                date: data.date,
                 Name: data.Name,
                 Age: Number(data.Age),
                 time: data.time,

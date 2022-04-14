@@ -57,6 +57,7 @@ export async function editPageDisco(ctx) {
             }
 
             const reservationDisco = {
+                date: data.date,
                 Name: data.Name,
                 Age: Number(data.Age),
                 time: data.time,
