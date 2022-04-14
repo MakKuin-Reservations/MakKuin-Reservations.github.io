@@ -40,7 +40,7 @@ export function createDiscoPage(ctx) {
 
     function update(errors = {}, data = {}) {
         //    ctx.render(createTemplate(createSubmitHandler(onSubmit, 'name', 'img', 'ingredients', 'steps'), errors, data));
-        ctx.render(createTemplate(createSubmitHandler(onSubmit, 'Name', 'Age', 'time', 'phone', 'kaparo', 'cacke', 'cackeCode', 'pices', 'cackeType', 'cackeInscr', 'cackeDescript', 'prices', 'kidsNumber', 'kidsMenu', 'kidsCetaring', 'parentMenu', 'note2'), errors, data));
+        ctx.render(createTemplate(createSubmitHandler(onSubmit, 'date', 'Name', 'Age', 'time', 'phone', 'kaparo', 'cacke', 'cackeCode', 'pices', 'cackeType', 'cackeInscr', 'cackeDescript', 'prices', 'kidsNumber', 'kidsMenu', 'kidsCetaring', 'parentMenu', 'note2'), errors, data));
 
     }
 
