@@ -38,7 +38,7 @@ const reservationPreview = (reservationPB) => html `
     <article class="preview">
         <div class="small"><img src="/assets/reservations.jpg"></div>
         <div class="title">
-            <h2>${reservationPB.Name} - ${reservationPB.Age }г.</h2>
+            <h2>${reservationPB.time}ч. ${reservationPB.Name} - ${reservationPB.Age }г.</h2>
         </div>
     </article>
 </a>`;

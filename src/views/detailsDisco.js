@@ -21,8 +21,8 @@ const reservationCard = (reservationDisco, isOwner, onDelete) => html `
             <h3>Детайли:</h3>
             <ul>
                <p> ___________________________________</p>
-               <h3>Резервация за: ${reservationDisco.time} часа</h3>
-               <h3>От: ${JSON.stringify(reservationDisco.date)} часа</h3>
+               <h3>Резервация за: ${JSON.stringify(reservationDisco.date.iso)}</h3>
+               <h3>От: ${JSON.stringify(reservationDisco.time)} часа</h3>
 
                <p> ___________________________________</p>
                </div>
@@ -30,7 +30,7 @@ const reservationCard = (reservationDisco, isOwner, onDelete) => html `
 
 
     <div class="description">
-               <li>Дата: ${reservationDisco.date}</li>
+               <li>Дата: ${JSON.stringify(reservationDisco.date.iso)}</li>
                <li>Име: ${reservationDisco.Name}</li>
                <li>Години: ${reservationDisco.Age}</li>
                <li>Телефон: ${reservationDisco.phone}</li>
