@@ -305,29 +305,34 @@ button {
   }
 
 
+
+
+
+
+
   .от_0 {
     position:absolute;
-     top: 81px;
-     left: 4.8cm;
+     top: 177px;
+     left: 9.8cm;
      font-size: 14px;
      font-weight: bold;
     }
    .за_0 {
      position: absolute;
-     top: 112px;
-     left: 230px;
+     top: 216px;
+     left: 380px;
      font-size: 14px;
      font-weight: bold;
    }.дата_0 {
      position: absolute;
-     top: 177px;
-     left: 198px;
+     top: 255px;
+     left: 438px;
      font-size: 12px;
      font-weight: bold;
    }.час_0 {
      position: absolute;
-     top: 177px;
-     left: 337px;
+     top: 293px;
+     left: 457px;
      font-size: 12px;
      font-weight: bold;
    }
