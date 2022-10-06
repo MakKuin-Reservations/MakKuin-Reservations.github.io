@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="/assets/makkuin.png">
+    <title>ПОКАНА Дискотека</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    
+<div class="container" id="app">
+    <div class="hedarLogo" id="hedarLogo"><img src="/assets/14.jpg" width="600px"  height="auto" >
+       
+        <span class="14от">{{message}}</span>
+        <span class="14за">{{message1}}</span>
+        <span class="14дата">{{message2}}</span>
+        <span class="14час">{{message3}}</span>
+      
+    </div><br>
+
+    <b>От: </b><input class="p"  type="text" v-model="message">
+    <b>За: </b><input class="p  rounded-full" type="text" v-model="message1">
+    <br><br>
+    <b>Дата: </b><input class="p  rounded-full" type="text" v-model="message2">
+    <b>Час: </b><input class="p rounded-full" type="text" v-model="message3">
+
+    <button class="bg-black" @click="saveCanvas()" id="button">Свали Поканата</button>
+   
+</div>
+<br>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="html2canvas.min.js"></script>
+<script>
+    var app = new Vue({
+    el: '#app',
+    data: {
+    message: '',
+    message1: '',
+    message2: '',
+    message3: '',
+    },
+    methods:{
+        saveCanvas(){
+            html2canvas(document.querySelector("#hedarLogo")).then(canvas => {
+            canvas.style.verticalAlign="top";
+            var image = canvas.toDataURL("image/png"); 
+            var anchos =  document.createElement('a');           
+            anchos.setAttribute('href', image);
+            anchos.setAttribute('download', 'покана.png');
+            anchos.click();
+            anchos.remove();
+            document.body.appendChild(canvas);
+            });
+        }
+    }
+    });
+</script>
+</body>
+</html>
+
+
+
