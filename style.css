@@ -123,3 +123,184 @@ button {
   position: absolute;
   background-color: rgba(0,0,0,0.8);
 }
+
+.container {
+    position: relative;
+  }
+  #button {
+    padding: 8px 8px;
+    font-size: 11px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #1e68de;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 7px rgb(39, 38, 38);
+  }
+  #button:hover {background-color: #4a3e8e}
+  #button:active {
+    background-color: #1b1bd7;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+  .от {
+   position:absolute;
+    top: 254px;
+    left: 1.5cm;
+    font-size: 18px;
+    font-weight: bold;
+   }
+  .за {
+    position: absolute;
+    top: 254px;
+    left: 280px;
+    font-weight: bold;
+    font-size: 18px;
+  }.дата {
+    position: absolute;
+    top: 293px;
+    left: 125px;
+    font-size: 14px;
+    font-weight: bold;
+  }.час {
+    position: absolute;
+    top: 293px;
+    left: 310px;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  .ПС_от {
+    position:absolute;
+     top: 209px;
+     left: 1.2cm;
+     font-size: 14px;
+     font-weight: bold;
+    }
+   .ПС_за {
+     position: absolute;
+     top: 229px;
+     left: 215px;
+     font-weight: bold;
+     font-size: 14px;
+   }.ПС_дата {
+     position: absolute;
+     top: 270px;
+     left: 100px;
+     font-size: 12px;
+     font-weight: bold;
+   }.ПС_час {
+     position: absolute;
+     top: 270px;
+     left: 290px;
+     font-size: 12px;
+     font-weight: bold;
+   }
+   .ПБ_от {
+    position:absolute;
+     top: 251px;
+     left: 2.1cm;
+     font-size: 14px;
+     font-weight: bold;
+    }
+   .ПБ_за {
+     position: absolute;
+     top: 251px;
+     left: 350px;
+     font-size: 14px;
+     font-weight: bold;
+   }.ПБ_дата {
+     position: absolute;
+     top: 294px;
+     left: 200px;
+     font-size: 12px;
+     font-weight: bold;
+   }.ПБ_час {
+     position: absolute;
+     top: 293px;
+     left: 390px;
+     font-size: 12px;
+     font-weight: bold;
+   }
+
+   .Диско_от {
+    position:absolute;
+     top: 173px;
+     left: 5.9cm;
+     font-size: 14px;
+     font-weight: bold;
+    }
+   .Диско_за {
+     position: absolute;
+     top: 195px;
+     left: 243px;
+     font-size: 14px;
+     font-weight: bold;
+   }.Диско_дата {
+     position: absolute;
+     top: 219px;
+     left: 278px;
+     font-size: 10px;
+     font-weight: bold;
+   }.Диско_час {
+     position: absolute;
+     top: 240px;
+     left: 313px;
+     font-size: 10px;
+     font-weight: bold;
+   }
+
+   .Филм_от {
+    position:absolute;
+     top: 81px;
+     left: 4.8cm;
+     font-size: 14px;
+     font-weight: bold;
+    }
+   .Филм_за {
+     position: absolute;
+     top: 112px;
+     left: 230px;
+     font-size: 14px;
+     font-weight: bold;
+   }.Филм_дата {
+     position: absolute;
+     top: 177px;
+     left: 198px;
+     font-size: 12px;
+     font-weight: bold;
+   }.Филм_час {
+     position: absolute;
+     top: 177px;
+     left: 337px;
+     font-size: 12px;
+     font-weight: bold;
+   }
+
+.p {
+   border: 1px solid brown;
+   border-radius: 7px;
+   box-shadow: 2px 2px #888888;
+  }
+  .hedarLogo {
+    width: 600px;
+    height: auto;
+  }
+  .grid-container {
+margin-left: 7cm;
+    display: inline-grid;
+    column-gap: 10px;
+    row-gap: 10px;
+    grid-template-columns: auto auto auto;
+   
+    padding: 10px;
+  }
+  .grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    
+    padding: 5px;
+    font-size: 30px;
+    text-align: center;
+  }
+  
