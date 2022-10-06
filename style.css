@@ -288,7 +288,7 @@ button {
     height: auto;
   }
   .grid-container {
-margin-left: 7cm;
+
     display: inline-grid;
     column-gap: 10px;
     row-gap: 10px;
