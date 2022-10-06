@@ -304,6 +304,10 @@ margin-left: 7cm;
     text-align: center;
   }
     img{
-    width: 100%;
-    height: auto;
+   
+
+  width: auto ;
+  max-width: 100% ;
+  height: auto ;
+
   }
