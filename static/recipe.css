@@ -144,7 +144,7 @@
         float: left;
         display: block;
         width: 250px;
-        margin: 80px;
+        margin: 10px;
     }
     
     .recent:hover {
@@ -219,6 +219,13 @@
     .recent-title5 {
         padding: 8px 16px;
         background-color: rgba(212, 29, 29, 0.473);
+        border-radius: 0 0 16px 16px;
+        text-align: center;
+    }
+
+   .recent-title6 {
+        padding: 8px 16px;
+        background-color: rgba(227, 12, 235, 0.473);
         border-radius: 0 0 16px 16px;
         text-align: center;
     }
