@@ -830,30 +830,23 @@ button {
      font-size: 12px;
      font-weight: bold;
    }
-   .от_19 {
-    position:absolute;
-     top: 81px;
-     left: 4.8cm;
-     font-size: 14px;
-     font-weight: bold;
-    }
    .за_19 {
      position: absolute;
-     top: 112px;
-     left: 230px;
+     top: 152px;
+     left: 260px;
      font-size: 14px;
      font-weight: bold;
    }.дата_19 {
      position: absolute;
-     top: 177px;
-     left: 198px;
-     font-size: 12px;
+     top: 174px;
+     left: 290px;
+     font-size: 10px;
      font-weight: bold;
    }.час_19 {
      position: absolute;
-     top: 177px;
-     left: 337px;
-     font-size: 12px;
+     top: 194px;
+     left: 322px;
+     font-size: 10px;
      font-weight: bold;
    }
    .от_20 {
