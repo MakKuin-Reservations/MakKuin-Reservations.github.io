@@ -39,7 +39,7 @@ export function loginPage(ctx) {
             event.target.reset();
             ctx.updateSession();
             ctx.updateUserNav();
-            ctx.page.redirect('/home');
+            ctx.page.redirect('/https://reservations-makkuin.github.io/');
         } catch (err) {
             update(err, { username });
         }
