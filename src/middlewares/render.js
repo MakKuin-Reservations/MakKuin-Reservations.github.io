@@ -18,9 +18,11 @@ export default function initialize() {
         if (userData) {
             document.getElementById('user').style.display = 'inline-block';
             document.getElementById('guest').style.display = 'none';
+            document.getElementById('nav').style.display = 'none';
         } else {
             document.getElementById('user').style.display = 'none';
             document.getElementById('guest').style.display = 'inline-block';
+            document.getElementById('nav').style.display = 'inline-block';
         }
     }
 

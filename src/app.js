@@ -12,12 +12,16 @@ import { calendarPBPage } from './views/calendarPB.js';
 import { calendarPSPage } from './views/calendarPS.js';
 import { calendarDiscoPage } from './views/calendarDisco.js';
 import { calendarMoviePage } from './views/calendarMovie.js';
+import { calendarOutPage } from './views/calendarOut.js';
+
 
 import { createPageMovie } from './views/createMovie.js';
 import { createDCPage } from './views/createDC.js';
 import { createPBPage } from './views/createPB.js';
 import { createPSPage } from './views/createPS.js';
 import { createDiscoPage } from './views/createDisco.js';
+
+
 
 import { detailsMoviePage } from './views/detailsMovie.js';
 import { detailsDCPage } from './views/detailsDC.js';
@@ -45,6 +49,8 @@ page('/calendarPB', calendarPBPage);
 page('/calendarPS', calendarPSPage);
 page('/calendarDisco', calendarDiscoPage);
 page('/calendarMovie', calendarMoviePage);
+page('/calendarOut', calendarOutPage);
+
 
 page('/detailsMovie/:id', detailsMoviePage);
 page('/detailsDC/:id', detailsDCPage);

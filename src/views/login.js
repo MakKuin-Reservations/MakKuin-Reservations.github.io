@@ -5,6 +5,9 @@ import { errorMsg, field } from './common.js';
 
 
 const loginTemplate = (onSubmit, errors, data) => html `
+<link rel="shortcut icon" href="/assets/Calendar.png">
+
+<title>Логин</title>
 <section id="login">
     <article>
         <h2>Login</h2>

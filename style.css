@@ -1,125 +1,376 @@
 body {
-  display: flex;
-  margin-top: 50px;
-  justify-content: center;
-  background-color: #FFFCFF;
+    display: flex;
+    margin-top: 10px;
+    justify-content: center;
+    background-color: #FFFCFF;
 }
+
 button {
-  width: 75px;
-  cursor: pointer;
-  box-shadow: 0px 0px 2px gray;
-  border: none;
-  outline: none;
-  padding: 5px;
-  border-radius: 5px;
-  color: white;
+    width: 90px;
+    cursor: pointer;
+    box-shadow: 0px 0px 2px rgb(132, 126, 126);
+    border: none;
+    outline: none;
+    padding: 5px;
+    border-radius: 5px;
+    color: rgb(237, 229, 229);
+}
+
+#nextButton,
+#backButton {
+    width: 90px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    padding: 5px;
+    border-radius: 5px;
+    color: rgb(170, 46, 46);
 }
 
 #header {
-  padding: 10px;
-  color: #d36c6c;
-  font-size: 26px;
-  font-family: sans-serif;
-  display: flex;
-  justify-content: space-between;
-}
-#header button {
-  background-color:#92a1d1;
-}
-#container {
-  width: 770px;
-}
-#weekdays {
-  width: 100%;
-  display: flex;
-  color: #247BA0;
-}
-#weekdays div {
-  width: 100px;
-  padding: 10px;
-}
-#calendar {
-  width: 100%;
-  margin: auto;
-  display: flex;
-  flex-wrap: wrap;
-}
-.day {
-  width: 100px;
-  padding: 10px;
-  height: 100px;
-  cursor: pointer;
-  box-sizing: border-box;
-  background-color: white;
-  margin: 5px;
-  box-shadow: 0px 0px 3px #CBD4C2;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.day:hover {
-  background-color: #e8faed;
+    padding: 0px;
+    color: #d36c6c;
+    font-size: 14px;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: space-between;
 }
 
-.day + #currentDay {
-  background-color:#e8f4fa;
+#headerMovie {
+    padding: 10px;
+    background-color: #7457ea33;
+    color: #d36c6c;
+    font-size: 26px;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: space-between;
 }
+
+#headerDC {
+    padding: 10px;
+    background-color: #fe665e33;
+    color: #d36c6c;
+    font-size: 26px;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: space-between;
+}
+
+#headerPB {
+    padding: 10px;
+    background-color: #7457ea33;
+    color: #d36c6c;
+    font-size: 26px;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: space-between;
+}
+
+#headerPS {
+    padding: 10px;
+    background-color: #eac85733;
+    color: #d36c6c;
+    font-size: 26px;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: space-between;
+}
+
+#headerDisco {
+    padding: 10px;
+    background-color: #57a3ea33;
+    color: #d36c6c;
+    font-size: 26px;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: space-between;
+}
+
+#header button {
+    background-color: #efeff3a2;
+}
+
+#container {
+    width: 770px;
+}
+
+#weekdays {
+    width: 100%;
+    display: flex;
+    color: #247BA0;
+    text-align: center;
+}
+
+#weekdays div {
+    width: 100px;
+    padding: 10px;
+}
+
+#calendar {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.day {
+    width: 100px;
+    padding: 10px;
+    height: 100px;
+    cursor: pointer;
+    box-sizing: border-box;
+    background-color: white;
+    margin: 5px;
+    box-shadow: 0px 0px 3px #CBD4C2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.day:hover {
+    background-color: #e8faed;
+}
+
+.day+#currentDay {
+    background-color: #c6e6f78b;
+}
+
 .event {
-  font-size: 10px;
-  padding: 3px;
-  background-color: #58bae4;
-  color: white;
-  border-radius: 5px;
-  max-height: 55px;
-  overflow: hidden;
+    font-size: 8px;
+    padding: 3px;
+    background-color: #58bae4;
+    color: white;
+    border-radius: 3px;
+    max-height: 55px;
+    overflow: hidden;
+    margin: 1px;
 }
+
 .padding {
-  cursor: default !important;
-  background-color: #FFFCFF !important;
-  box-shadow: none !important;
+    cursor: default !important;
+    background-color: #FFFCFF !important;
+    box-shadow: none !important;
 }
-#newEventModal, #deleteEventModal {
-  display: none;
-  z-index: 20;
-  padding: 25px;
-  background-color: #e8f4fa;
-  box-shadow: 0px 0px 3px black;
-  border-radius: 5px;
-  width: 350px;
-  top: 100px;
-  left: calc(50% - 175px);
-  position: absolute;
-  font-family: sans-serif;
+
+#newEventModal,
+#deleteEventModal {
+    display: none;
+    z-index: 20;
+    padding: 25px;
+    background-color: #e8f4fa;
+    box-shadow: 0px 0px 3px black;
+    border-radius: 5px;
+    width: 560px;
+    top: 10px;
+    left: calc(40% - 175px);
+    position: absolute;
+    font-family: sans-serif;
 }
+
+#names,
+#phone {
+    padding: 4px;
+    width: 40%;
+    box-sizing: border-box;
+    margin-bottom: 5px;
+    border-radius: 3px;
+    outline: none;
+    border: none;
+    box-shadow: 0px 0px 3px gray;
+    color: #d36c6c;
+}
+
+#cackeCode,
+#age {
+    padding: 4px;
+    width: 20%;
+    box-sizing: border-box;
+    margin-bottom: 5px;
+    border-radius: 3px;
+    outline: none;
+    border: none;
+    box-shadow: 0px 0px 3px gray;
+    color: #d36c6c;
+}
+
+#kidsNumber,
+#prise {
+    padding: 4px;
+    width: 11%;
+    box-sizing: border-box;
+    margin-bottom: 5px;
+    border-radius: 3px;
+    outline: none;
+    border: none;
+    box-shadow: 0px 0px 3px gray;
+}
+
+#quantity2,
+#quantity {
+    padding: 2px;
+    width: 11%;
+}
+
+#descript2,
+#descript {
+    padding: 2px;
+    width: 20%;
+}
+
+#cackeTaste,
+#HBDName {
+    padding: 4px;
+    width: 60%;
+    box-sizing: border-box;
+    margin-bottom: 5px;
+    border-radius: 3px;
+    outline: none;
+    border: none;
+    box-shadow: 0px 0px 3px gray;
+}
+
 #eventTitleInput {
-  padding: 10px;
-  width: 100%;
-  box-sizing: border-box;
-  margin-bottom: 25px;
-  border-radius: 3px;
-  outline: none;
-  border: none;
-  box-shadow: 0px 0px 3px gray;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 25px;
+    border-radius: 3px;
+    outline: none;
+    border: none;
+    box-shadow: 0px 0px 3px gray;
 }
-#eventTitleInput.error {
-  border: 2px solid red;
+
+#kaparoNomer,
+#kaparo {
+    padding: 4px;
+    width: 20%;
+    box-sizing: border-box;
+    margin-bottom: 25px;
+    border-radius: 3px;
+    outline: none;
+    border: none;
+    box-shadow: 0px 0px 3px gray;
 }
-#cancelButton, #deleteButton {
-  background-color: #d36c6c;
+
+#form {
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 25px;
+    border-radius: 3px;
+    outline: none;
+    border: none;
+    box-shadow: 0px 0px 3px gray;
 }
-#saveButton, #closeButton {
-  background-color: #92a1d1;
+
+#names.error {
+    border: 2px solid red;
 }
+
+#age.error {
+    border: 2px solid red;
+}
+
+#time.error {
+    border: 2px solid red;
+}
+
+#phone.error {
+    border: 2px solid red;
+}
+
+#btnMenu2,
+#btnMenu {
+    background-color: #2f8bc0;
+}
+
+#closeButton,
+#cancelButton {
+    background-color: #40c02f;
+}
+
+#deleteBtn2,
+#deleteButton,
+#deleteBtn {
+    background-color: #d36c6c;
+}
+
+#saveButton,
+#editButton,
+#editBtn {
+    background-color: #2e2bec;
+}
+
+
+/* #closeButton {
+    background-color: #92a1d1;
+} */
+
 #eventText {
-  font-size: 14px;
+    font-size: 14px;
 }
+
 #modalBackDrop {
-  display: none;
-  top: 0px;
-  left: 0px;
-  z-index: 10;
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
-  background-color: rgba(0,0,0,0.8);
+    display: none;
+    top: 0px;
+    left: 0px;
+    z-index: 10;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.small {
+    float: left;
+    background-color: white;
+    width: 150px;
+    text-align: center;
+    border-radius: 0 16px 16px 0;
+}
+
+.small>img {
+    max-width: 130px;
+    max-height: 70px;
+    margin: 16px auto;
+    display: block;
+}
+
+.hedarLogo>img {
+    max-width: 130px;
+    max-height: 60px;
+    margin: 16px auto;
+    display: block;
+}
+
+h2 {
+    color: rgb(59, 62, 228);
+    text-align: center;
+}
+
+h3 {
+    color: #d36c6c;
+    text-align: left;
+}
+
+hr.rounded {
+    border-top: 2px solid #bbb;
+    border-radius: 5px;
+}
+
+#име {
+    color: #d36c6c;
+}
+
+#години {
+    color: #d36c6c;
+}
+
+#час {
+    color: #d36c6c;
+}
+
+#поръчана {
+    color: #d36c6c;
+    text-shadow: 1px 1px #1b0101;
 }

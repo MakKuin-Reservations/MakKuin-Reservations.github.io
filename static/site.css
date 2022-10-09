@@ -7,29 +7,29 @@
 }
 
 body {
-    width: 980px;
+    width: 1070px;
     margin: 0 auto 0 auto;
     position: relative;
 }
 
 body>header {
-    padding: 32px;
-    background-color: #cccccc;
+    padding: 10px;
+    border-radius: 15%;
+    background-color: #2600ff00;
     position: relative;
 }
 
 h1 {
-    font-size: 32px;
     line-height: 32px;
     vertical-align: bottom;
     display: inline;
 }
 
 h1 img {
-    height: 120px;
+    height: 40px;
     vertical-align: bottom;
     margin-right: 8px;
-    padding-left: 60px;
+    padding-left: 30px;
 }
 
 h1 a {
@@ -43,8 +43,8 @@ h1 a:visited {
 }
 
 main {
-    background-color: #666666;
-    padding: 32px;
+  
+    padding: 0px;
 }
 
 nav {
@@ -61,8 +61,8 @@ nav div {
 nav a {
     display: inline-block;
     background-color: salmon;
-    padding: 8px 16px;
-    margin: 0 8px;
+    padding: 0px 14px;
+    margin: 0 4px;
     text-decoration: none;
     color: black;
     border-radius: 8px;
@@ -90,6 +90,10 @@ a.active {
     display: none;
 }
 
+#nav {
+    display: none;
+}
+
 #views {
     display: none;
 }
@@ -106,10 +110,21 @@ a.active {
 .section-title {
     display: block;
     width: 850px;
-    margin: 32px auto 32px auto;
+    margin: 0px auto 32px auto;
     background-color: #cccccc;
     box-shadow: 8px 8px 8px 0 rgba(0, 0, 0, 0.2), 12px 12px 20px 0 rgba(0, 0, 0, 0.19);
-    padding: 16px 32px;
+    padding: 10px 32px;
+    border-radius: 2px;
+    text-align: center;
+}
+
+.section-title2 {
+    display: block;
+    width: 850px;
+    margin: 25px auto 32px auto;
+    background-color: #cccccc;
+    box-shadow: 8px 8px 8px 0 rgba(0, 0, 0, 0.2), 12px 12px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 4px 32px;
     border-radius: 2px;
     text-align: center;
 }
