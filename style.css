@@ -1,0 +1,1092 @@
+body {
+  display: flex;
+  margin-top: 50px;
+  justify-content: center;
+  background-color: #FFFCFF;
+}
+button {
+  width: 75px;
+  cursor: pointer;
+  box-shadow: 0px 0px 2px gray;
+  border: none;
+  outline: none;
+  padding: 5px;
+  border-radius: 5px;
+  color: white;
+}
+
+#header {
+  padding: 10px;
+  color: #d36c6c;
+  font-size: 26px;
+  font-family: sans-serif;
+  display: flex;
+  justify-content: space-between;
+}
+#header button {
+  background-color:#92a1d1;
+}
+#container {
+  width: 770px;
+}
+#weekdays {
+  width: 100%;
+  display: flex;
+  color: #247BA0;
+}
+#weekdays div {
+  width: 100px;
+  padding: 10px;
+}
+#calendar {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+.day {
+  width: 100px;
+  padding: 10px;
+  height: 100px;
+  cursor: pointer;
+  box-sizing: border-box;
+  background-color: white;
+  margin: 5px;
+  box-shadow: 0px 0px 3px #CBD4C2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.day:hover {
+  background-color: #e8faed;
+}
+
+.day + #currentDay {
+  background-color:#e8f4fa;
+}
+.event {
+  font-size: 10px;
+  padding: 3px;
+  background-color: #58bae4;
+  color: white;
+  border-radius: 5px;
+  max-height: 55px;
+  overflow: hidden;
+}
+.padding {
+  cursor: default !important;
+  background-color: #FFFCFF !important;
+  box-shadow: none !important;
+}
+#newEventModal, #deleteEventModal {
+  display: none;
+  z-index: 20;
+  padding: 25px;
+  background-color: #e8f4fa;
+  box-shadow: 0px 0px 3px black;
+  border-radius: 5px;
+  width: 350px;
+  top: 100px;
+  left: calc(50% - 175px);
+  position: absolute;
+  font-family: sans-serif;
+}
+#eventTitleInput {
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 25px;
+  border-radius: 3px;
+  outline: none;
+  border: none;
+  box-shadow: 0px 0px 3px gray;
+}
+#eventTitleInput.error {
+  border: 2px solid red;
+}
+#cancelButton, #deleteButton {
+  background-color: #d36c6c;
+}
+#saveButton, #closeButton {
+  background-color: #92a1d1;
+}
+#eventText {
+  font-size: 14px;
+}
+#modalBackDrop {
+  display: none;
+  top: 0px;
+  left: 0px;
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  background-color: rgba(0,0,0,0.8);
+}
+
+.container {
+    position: relative;
+  }
+  #button {
+    padding: 8px 8px;
+    font-size: 11px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #1e68de;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 7px rgb(39, 38, 38);
+  }
+  #button:hover {background-color: #4a3e8e}
+  #button:active {
+    background-color: #1b1bd7;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+  .от {
+   position:absolute;
+    top: 254px;
+    left: 1.5cm;
+    font-size: 18px;
+    font-weight: bold;
+   }
+  .за {
+    position: absolute;
+    top: 254px;
+    left: 280px;
+    font-weight: bold;
+    font-size: 18px;
+  }.дата {
+    position: absolute;
+    top: 293px;
+    left: 125px;
+    font-size: 14px;
+    font-weight: bold;
+  }.час {
+    position: absolute;
+    top: 293px;
+    left: 310px;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  .ПС_от {
+    position:absolute;
+     top: 209px;
+     left: 1.2cm;
+     font-size: 14px;
+     font-weight: bold;
+    }
+   .ПС_за {
+     position: absolute;
+     top: 229px;
+     left: 215px;
+     font-weight: bold;
+     font-size: 14px;
+   }.ПС_дата {
+     position: absolute;
+     top: 270px;
+     left: 100px;
+     font-size: 12px;
+     font-weight: bold;
+   }.ПС_час {
+     position: absolute;
+     top: 270px;
+     left: 290px;
+     font-size: 12px;
+     font-weight: bold;
+   }
+   .ПБ_от {
+    position:absolute;
+     top: 251px;
+     left: 2.1cm;
+     font-size: 14px;
+     font-weight: bold;
+    }
+   .ПБ_за {
+     position: absolute;
+     top: 251px;
+     left: 350px;
+     font-size: 14px;
+     font-weight: bold;
+   }.ПБ_дата {
+     position: absolute;
+     top: 294px;
+     left: 200px;
+     font-size: 12px;
+     font-weight: bold;
+   }.ПБ_час {
+     position: absolute;
+     top: 293px;
+     left: 390px;
+     font-size: 12px;
+     font-weight: bold;
+   }
+
+   .Диско_от {
+    position:absolute;
+     top: 173px;
+     left: 5.9cm;
+     font-size: 14px;
+     font-weight: bold;
+    }
+   .Диско_за {
+     position: absolute;
+     top: 195px;
+     left: 243px;
+     font-size: 14px;
+     font-weight: bold;
+   }.Диско_дата {
+     position: absolute;
+     top: 219px;
+     left: 278px;
+     font-size: 10px;
+     font-weight: bold;
+   }.Диско_час {
+     position: absolute;
+     top: 240px;
+     left: 313px;
+     font-size: 10px;
+     font-weight: bold;
+   }
+
+   .Филм_от {
+    position:absolute;
+     top: 81px;
+     left: 4.8cm;
+     font-size: 14px;
+     font-weight: bold;
+    }
+   .Филм_за {
+     position: absolute;
+     top: 112px;
+     left: 230px;
+     font-size: 14px;
+     font-weight: bold;
+   }.Филм_дата {
+     position: absolute;
+     top: 177px;
+     left: 198px;
+     font-size: 12px;
+     font-weight: bold;
+   }.Филм_час {
+     position: absolute;
+     top: 177px;
+     left: 337px;
+     font-size: 12px;
+     font-weight: bold;
+   }
+
+.p {
+   border: 1px solid brown;
+   border-radius: 7px;
+   box-shadow: 2px 2px #888888;
+  }
+  .hedarLogo {
+    width: 600px;
+    height: auto;
+  }
+  .grid-container {
+
+    display: inline-grid;
+    column-gap: 10px;
+    row-gap: 10px;
+    grid-template-columns: auto auto auto;
+   
+    padding: 10px;
+  }
+  .grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    
+    padding: 5px;
+    font-size: 30px;
+    text-align: center;
+  }
+
+
+
+
+
+
+
+  .от_0 {
+    position:absolute;
+     top: 177px;
+     left: 9.8cm;
+     font-size: 14px;
+     font-weight: bold;
+    }
+   .за_0 {
+     position: absolute;
+     top: 216px;
+     left: 380px;
+     font-size: 14px;
+     font-weight: bold;
+   }.дата_0 {
+     position: absolute;
+     top: 255px;
+     left: 438px;
+     font-size: 12px;
+     font-weight: bold;
+   }.час_0 {
+     position: absolute;
+     top: 293px;
+     left: 457px;
+     font-size: 12px;
+     font-weight: bold;
+   }
+   .от_1 {
+    position:absolute;
+     top: 81px;
+     left: 4.8cm;
+     font-size: 14px;
+     font-weight: bold;
+    }
+   .за_1 {
+     position: absolute;
+     top: 112px;
+     left: 230px;
+     font-size: 14px;
+     font-weight: bold;
+   }.дата_1 {
+     position: absolute;
+     top: 177px;
+     left: 198px;
+     font-size: 12px;
+     font-weight: bold;
+   }.час_1 {
+     position: absolute;
+     top: 177px;
+     left: 337px;
+     font-size: 12px;
+     font-weight: bold;
+   }
+   .от_2 {
+    position:absolute;
+     top: 81px;
+     left: 4.8cm;
+     font-size: 14px;
+     font-weight: bold;
+    }
+   .за_2 {
+     position: absolute;
+     top: 112px;
+     left: 230px;
+     font-size: 14px;
+     font-weight: bold;
+   }.дата_2 {
+     position: absolute;
+     top: 177px;
+     left: 198px;
+     font-size: 12px;
+     font-weight: bold;
+   }.час_2 {
+     position: absolute;
+     top: 177px;
+     left: 337px;
+     font-size: 12px;
+     font-weight: bold;
+   }
+   .от_3 {
+    position:absolute;
+     top: 81px;
+     left: 4.8cm;
+     font-size: 14px;
+     font-weight: bold;
+    }
+   .за_3 {
+     position: absolute;
+     top: 112px;
+     left: 230px;
+     font-size: 14px;
+     font-weight: bold;
+   }.дата_3 {
+     position: absolute;
+     top: 177px;
+     left: 198px;
+     font-size: 12px;
+     font-weight: bold;
+   }.час_3 {
+     position: absolute;
+     top: 177px;
+     left: 337px;
+     font-size: 12px;
+     font-weight: bold;
+   }
+   .от_4 {
+    position:absolute;
+     top: 81px;
+     left: 4.8cm;
+     font-size: 14px;
+     font-weight: bold;
+    }
+   .за_4 {
+     position: absolute;
+     top: 112px;
+     left: 230px;
+     font-size: 14px;
+     font-weight: bold;
+   }.дата_4 {
+     position: absolute;
+     top: 177px;
+     left: 198px;
+     font-size: 12px;
+     font-weight: bold;
+   }.час_4 {
+     position: absolute;
+     top: 177px;
+     left: 337px;
+     font-size: 12px;
+     font-weight: bold;
+   }
+   .от_4 {
+    position:absolute;
+     top: 81px;
+     left: 4.8cm;
+     font-size: 14px;
+     font-weight: bold;
+    }
+   .за_4 {
+     position: absolute;
+     top: 112px;
+     left: 230px;
+     font-size: 14px;
+     font-weight: bold;
+   }.дата_4 {
+     position: absolute;
+     top: 177px;
+     left: 198px;
+     font-size: 12px;
+     font-weight: bold;
+   }.час_4 {
+     position: absolute;
+     top: 177px;
+     left: 337px;
+     font-size: 12px;
+     font-weight: bold;
+   }
+   .от_5 {
+    position:absolute;
+     top: 81px;
+     left: 4.8cm;
+     font-size: 14px;
+     font-weight: bold;
+    }
+   .за_5 {
+     position: absolute;
+     top: 112px;
+     left: 230px;
+     font-size: 14px;
+     font-weight: bold;
+   }.дата_5 {
+     position: absolute;
+     top: 177px;
+     left: 198px;
+     font-size: 12px;
+     font-weight: bold;
+   }.час_5 {
+     position: absolute;
+     top: 177px;
+     left: 337px;
+     font-size: 12px;
+     font-weight: bold;
+   }
+   .от_6 {
+    position:absolute;
+     top: 81px;
+     left: 4.8cm;
+     font-size: 14px;
+     font-weight: bold;
+    }
+   .за_6 {
+     position: absolute;
+     top: 112px;
+     left: 230px;
+     font-size: 14px;
+     font-weight: bold;
+   }.дата_6 {
+     position: absolute;
+     top: 177px;
+     left: 198px;
+     font-size: 12px;
+     font-weight: bold;
+   }.час_6 {
+     position: absolute;
+     top: 177px;
+     left: 337px;
+     font-size: 12px;
+     font-weight: bold;
+   }
+   .от_7 {
+    position:absolute;
+     top: 81px;
+     left: 4.8cm;
+     font-size: 14px;
+     font-weight: bold;
+    }
+   .за_7 {
+     position: absolute;
+     top: 112px;
+     left: 230px;
+     font-size: 14px;
+     font-weight: bold;
+   }.дата_7 {
+     position: absolute;
+     top: 177px;
+     left: 198px;
+     font-size: 12px;
+     font-weight: bold;
+   }.час_7 {
+     position: absolute;
+     top: 177px;
+     left: 337px;
+     font-size: 12px;
+     font-weight: bold;
+   }
+   .от_8 {
+    position:absolute;
+     top: 81px;
+     left: 4.8cm;
+     font-size: 14px;
+     font-weight: bold;
+    }
+   .за_8 {
+     position: absolute;
+     top: 112px;
+     left: 230px;
+     font-size: 14px;
+     font-weight: bold;
+   }.дата_8 {
+     position: absolute;
+     top: 177px;
+     left: 198px;
+     font-size: 12px;
+     font-weight: bold;
+   }.час_8 {
+     position: absolute;
+     top: 177px;
+     left: 337px;
+     font-size: 12px;
+     font-weight: bold;
+   }
+   .от_9 {
+    position:absolute;
+     top: 81px;
+     left: 4.8cm;
+     font-size: 14px;
+     font-weight: bold;
+    }
+   .за_9 {
+     position: absolute;
+     top: 112px;
+     left: 230px;
+     font-size: 14px;
+     font-weight: bold;
+   }.дата_9 {
+     position: absolute;
+     top: 177px;
+     left: 198px;
+     font-size: 12px;
+     font-weight: bold;
+   }.час_9 {
+     position: absolute;
+     top: 177px;
+     left: 337px;
+     font-size: 12px;
+     font-weight: bold;
+   }
+   .от_10 {
+    position:absolute;
+     top: 81px;
+     left: 4.8cm;
+     font-size: 14px;
+     font-weight: bold;
+    }
+   .за_10 {
+     position: absolute;
+     top: 112px;
+     left: 230px;
+     font-size: 14px;
+     font-weight: bold;
+   }.дата_10 {
+     position: absolute;
+     top: 177px;
+     left: 198px;
+     font-size: 12px;
+     font-weight: bold;
+   }.час_10 {
+     position: absolute;
+     top: 177px;
+     left: 337px;
+     font-size: 12px;
+     font-weight: bold;
+   }
+   .от_11 {
+    position:absolute;
+     top: 81px;
+     left: 4.8cm;
+     font-size: 14px;
+     font-weight: bold;
+    }
+   .за_11 {
+     position: absolute;
+     top: 112px;
+     left: 230px;
+     font-size: 14px;
+     font-weight: bold;
+   }.дата_11 {
+     position: absolute;
+     top: 177px;
+     left: 198px;
+     font-size: 12px;
+     font-weight: bold;
+   }.час_11 {
+     position: absolute;
+     top: 177px;
+     left: 337px;
+     font-size: 12px;
+     font-weight: bold;
+   }
+   .от_12 {
+    position:absolute;
+     top: 81px;
+     left: 4.8cm;
+     font-size: 14px;
+     font-weight: bold;
+    }
+   .за_12 {
+     position: absolute;
+     top: 112px;
+     left: 230px;
+     font-size: 14px;
+     font-weight: bold;
+   }.дата_12 {
+     position: absolute;
+     top: 177px;
+     left: 198px;
+     font-size: 12px;
+     font-weight: bold;
+   }.час_12 {
+     position: absolute;
+     top: 177px;
+     left: 337px;
+     font-size: 12px;
+     font-weight: bold;
+   }
+   .от_13 {
+    position:absolute;
+     top: 81px;
+     left: 4.8cm;
+     font-size: 14px;
+     font-weight: bold;
+    }
+   .за_13 {
+     position: absolute;
+     top: 112px;
+     left: 230px;
+     font-size: 14px;
+     font-weight: bold;
+   }.дата_13 {
+     position: absolute;
+     top: 177px;
+     left: 198px;
+     font-size: 12px;
+     font-weight: bold;
+   }.час_13 {
+     position: absolute;
+     top: 177px;
+     left: 337px;
+     font-size: 12px;
+     font-weight: bold;
+   }
+   .от_14 {
+    position:absolute;
+     top: 81px;
+     left: 4.8cm;
+     font-size: 14px;
+     font-weight: bold;
+    }
+   .за_14 {
+     position: absolute;
+     top: 112px;
+     left: 230px;
+     font-size: 14px;
+     font-weight: bold;
+   }.дата_14 {
+     position: absolute;
+     top: 177px;
+     left: 198px;
+     font-size: 12px;
+     font-weight: bold;
+   }.час_14 {
+     position: absolute;
+     top: 177px;
+     left: 337px;
+     font-size: 12px;
+     font-weight: bold;
+   }
+   .от_15 {
+    position:absolute;
+     top: 81px;
+     left: 4.8cm;
+     font-size: 14px;
+     font-weight: bold;
+    }
+   .за_15 {
+     position: absolute;
+     top: 112px;
+     left: 230px;
+     font-size: 14px;
+     font-weight: bold;
+   }.дата_15 {
+     position: absolute;
+     top: 177px;
+     left: 198px;
+     font-size: 12px;
+     font-weight: bold;
+   }.час_15 {
+     position: absolute;
+     top: 177px;
+     left: 337px;
+     font-size: 12px;
+     font-weight: bold;
+   }
+   .от_16 {
+    position:absolute;
+     top: 81px;
+     left: 4.8cm;
+     font-size: 14px;
+     font-weight: bold;
+    }
+   .за_16 {
+     position: absolute;
+     top: 112px;
+     left: 230px;
+     font-size: 14px;
+     font-weight: bold;
+   }.дата_16 {
+     position: absolute;
+     top: 177px;
+     left: 198px;
+     font-size: 12px;
+     font-weight: bold;
+   }.час_16 {
+     position: absolute;
+     top: 177px;
+     left: 337px;
+     font-size: 12px;
+     font-weight: bold;
+   }
+   .от_17 {
+    position:absolute;
+     top: 81px;
+     left: 4.8cm;
+     font-size: 14px;
+     font-weight: bold;
+    }
+   .за_17 {
+     position: absolute;
+     top: 112px;
+     left: 230px;
+     font-size: 14px;
+     font-weight: bold;
+   }.дата_17 {
+     position: absolute;
+     top: 177px;
+     left: 198px;
+     font-size: 12px;
+     font-weight: bold;
+   }.час_17 {
+     position: absolute;
+     top: 177px;
+     left: 337px;
+     font-size: 12px;
+     font-weight: bold;
+   }
+   .от_18 {
+    position:absolute;
+     top: 81px;
+     left: 4.8cm;
+     font-size: 14px;
+     font-weight: bold;
+    }
+   .за_18 {
+     position: absolute;
+     top: 112px;
+     left: 230px;
+     font-size: 14px;
+     font-weight: bold;
+   }.дата_18 {
+     position: absolute;
+     top: 177px;
+     left: 198px;
+     font-size: 12px;
+     font-weight: bold;
+   }.час_18 {
+     position: absolute;
+     top: 177px;
+     left: 337px;
+     font-size: 12px;
+     font-weight: bold;
+   }
+  .от_19 {
+     position: absolute;
+     top: 132px;
+     left: 6.5cm;
+     font-size: 14px;
+     font-weight: bold;
+   }
+   .за_19 {
+     position: absolute;
+     top: 152px;
+     left: 260px;
+     font-size: 14px;
+     font-weight: bold;
+   }.дата_19 {
+     position: absolute;
+     top: 174px;
+     left: 290px;
+     font-size: 10px;
+     font-weight: bold;
+   }.час_19 {
+     position: absolute;
+     top: 194px;
+     left: 322px;
+     font-size: 10px;
+     font-weight: bold;
+   }
+   .от_20 {
+    position:absolute;
+     top: 81px;
+     left: 4.8cm;
+     font-size: 14px;
+     font-weight: bold;
+    }
+   .за_20 {
+     position: absolute;
+     top: 112px;
+     left: 230px;
+     font-size: 14px;
+     font-weight: bold;
+   }.дата_20 {
+     position: absolute;
+     top: 177px;
+     left: 198px;
+     font-size: 12px;
+     font-weight: bold;
+   }.час_20 {
+     position: absolute;
+     top: 177px;
+     left: 337px;
+     font-size: 12px;
+     font-weight: bold;
+   }
+   .от_21 {
+    position:absolute;
+     top: 81px;
+     left: 4.8cm;
+     font-size: 14px;
+     font-weight: bold;
+    }
+   .за_21 {
+     position: absolute;
+     top: 112px;
+     left: 230px;
+     font-size: 14px;
+     font-weight: bold;
+   }.дата_21 {
+     position: absolute;
+     top: 177px;
+     left: 198px;
+     font-size: 12px;
+     font-weight: bold;
+   }.час_21 {
+     position: absolute;
+     top: 177px;
+     left: 337px;
+     font-size: 12px;
+     font-weight: bold;
+   }
+   .от_22 {
+    position:absolute;
+     top: 81px;
+     left: 4.8cm;
+     font-size: 14px;
+     font-weight: bold;
+    }
+   .за_22 {
+     position: absolute;
+     top: 112px;
+     left: 230px;
+     font-size: 14px;
+     font-weight: bold;
+   }.дата_22 {
+     position: absolute;
+     top: 177px;
+     left: 198px;
+     font-size: 12px;
+     font-weight: bold;
+   }.час_22 {
+     position: absolute;
+     top: 177px;
+     left: 337px;
+     font-size: 12px;
+     font-weight: bold;
+   }
+   .от_23 {
+    position:absolute;
+     top: 81px;
+     left: 4.8cm;
+     font-size: 14px;
+     font-weight: bold;
+    }
+   .за_23 {
+     position: absolute;
+     top: 112px;
+     left: 230px;
+     font-size: 14px;
+     font-weight: bold;
+   }.дата_23 {
+     position: absolute;
+     top: 177px;
+     left: 198px;
+     font-size: 12px;
+     font-weight: bold;
+   }.час_23 {
+     position: absolute;
+     top: 177px;
+     left: 337px;
+     font-size: 12px;
+     font-weight: bold;
+   }
+   .от_24 {
+    position:absolute;
+     top: 81px;
+     left: 4.8cm;
+     font-size: 14px;
+     font-weight: bold;
+    }
+   .за_24 {
+     position: absolute;
+     top: 112px;
+     left: 230px;
+     font-size: 14px;
+     font-weight: bold;
+   }.дата_24 {
+     position: absolute;
+     top: 177px;
+     left: 198px;
+     font-size: 12px;
+     font-weight: bold;
+   }.час_24 {
+     position: absolute;
+     top: 177px;
+     left: 337px;
+     font-size: 12px;
+     font-weight: bold;
+   }
+   .от_25 {
+    position:absolute;
+     top: 81px;
+     left: 4.8cm;
+     font-size: 14px;
+     font-weight: bold;
+    }
+   .за_25 {
+     position: absolute;
+     top: 112px;
+     left: 230px;
+     font-size: 14px;
+     font-weight: bold;
+   }.дата_25 {
+     position: absolute;
+     top: 177px;
+     left: 198px;
+     font-size: 12px;
+     font-weight: bold;
+   }.час_25 {
+     position: absolute;
+     top: 177px;
+     left: 337px;
+     font-size: 12px;
+     font-weight: bold;
+   }
+   .от_26 {
+    position:absolute;
+     top: 81px;
+     left: 4.8cm;
+     font-size: 14px;
+     font-weight: bold;
+    }
+   .за_26 {
+     position: absolute;
+     top: 112px;
+     left: 230px;
+     font-size: 14px;
+     font-weight: bold;
+   }.дата_26 {
+     position: absolute;
+     top: 177px;
+     left: 198px;
+     font-size: 12px;
+     font-weight: bold;
+   }.час_26 {
+     position: absolute;
+     top: 177px;
+     left: 337px;
+     font-size: 12px;
+     font-weight: bold;
+   }
+   .от_27 {
+    position:absolute;
+     top: 81px;
+     left: 4.8cm;
+     font-size: 14px;
+     font-weight: bold;
+    }
+   .за_27 {
+     position: absolute;
+     top: 112px;
+     left: 230px;
+     font-size: 14px;
+     font-weight: bold;
+   }.дата_27 {
+     position: absolute;
+     top: 177px;
+     left: 198px;
+     font-size: 12px;
+     font-weight: bold;
+   }.час_27 {
+     position: absolute;
+     top: 177px;
+     left: 337px;
+     font-size: 12px;
+     font-weight: bold;
+   }
+   .от_28 {
+    position:absolute;
+     top: 81px;
+     left: 4.8cm;
+     font-size: 14px;
+     font-weight: bold;
+    }
+   .за_28 {
+     position: absolute;
+     top: 112px;
+     left: 230px;
+     font-size: 14px;
+     font-weight: bold;
+   }.дата_28 {
+     position: absolute;
+     top: 177px;
+     left: 198px;
+     font-size: 12px;
+     font-weight: bold;
+   }.час_28 {
+     position: absolute;
+     top: 177px;
+     left: 337px;
+     font-size: 12px;
+     font-weight: bold;
+   }
