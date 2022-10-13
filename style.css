@@ -147,27 +147,27 @@ button {
   }
   .от {
    position:absolute;
-    top: 254px;
-    left: 1.5cm;
+    top: 172px;
+    left: 3cm;
     font-size: 18px;
     font-weight: bold;
    }
   .за {
     position: absolute;
-    top: 254px;
-    left: 280px;
+    top: 197px;
+    left: 140px;
     font-weight: bold;
     font-size: 18px;
   }.дата {
     position: absolute;
-    top: 293px;
-    left: 125px;
+    top: 224px;
+    left: 195px;
     font-size: 14px;
     font-weight: bold;
   }.час {
     position: absolute;
-    top: 293px;
-    left: 310px;
+    top: 249px;
+    left: 235px;
     font-size: 14px;
     font-weight: bold;
   }
