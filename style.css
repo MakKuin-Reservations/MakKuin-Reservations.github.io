@@ -171,7 +171,14 @@ button {
     font-size: 14px;
     font-weight: bold;
   }
-.ПС_за {
+ .ПС_от {
+    position:absolute;
+     top: 222px;
+     left: 1.2cm;
+     font-size: 14px;
+     font-weight: bold;
+    }
+   .ПС_за {
      position: absolute;
      top: 245px;
      left: 215px;
