@@ -171,28 +171,21 @@ button {
     font-size: 14px;
     font-weight: bold;
   }
-  .ПС_от {
-    position:absolute;
-     top: 209px;
-     left: 1.2cm;
-     font-size: 14px;
-     font-weight: bold;
-    }
-   .ПС_за {
+.ПС_за {
      position: absolute;
-     top: 229px;
+     top: 245px;
      left: 215px;
      font-weight: bold;
      font-size: 14px;
    }.ПС_дата {
      position: absolute;
-     top: 270px;
+     top: 288px;
      left: 100px;
      font-size: 12px;
      font-weight: bold;
    }.ПС_час {
      position: absolute;
-     top: 270px;
+     top: 288px;
      left: 290px;
      font-size: 12px;
      font-weight: bold;
